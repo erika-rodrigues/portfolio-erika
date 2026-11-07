@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Erika, estudante de Tecnologia da Informação explorando software, interfaces e hardware.">
+  <title>Erika | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Início">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">Erika</span>
+        <span class="brand-path">/portfólio</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Portfólio · Tecnologia da Informação</p>
+
+          <h1 class="hero-title">
+            <span class="muted">Do código</span>
+            <span class="hero-title-line">ao <span class="accent">circuito</span><span class="accent-dot">.</span></span>
+          </h1>
+
+          <p class="hero-lead">Olá, eu sou Erika. Estudante de TI explorando software, interfaces e hardware.</p>
+
+          <p class="hero-desc">
+            Estou no curso técnico integrado em Tecnologia da Informação e venho conhecendo a área por vários caminhos:
+            programação, design de interfaces, banco de dados e sistemas embarcados. Aqui reúno os projetos e o que aprendo com cada um deles.
+          </p>
+
+          <div class="hero-actions">
+            <a href="projetos.html" class="btn btn-primary">
+              Conhecer meus projetos
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+            </a>
+            <a href="sobre.html" class="btn btn-ghost">Sobre mim</a>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-pill" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+              GitHub <span class="status">a configurar</span>
+            </a>
+            <a href="#" class="social-pill" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg>
+              LinkedIn <span class="status">a configurar</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <span class="coords">x:00 y:00</span>
+          <span class="orb"></span>
+          <span class="orb-ring"></span>
+
+          <div class="code-window">
+            <div class="code-bar">
+              <span class="dots"><i></i><i></i><i class="blue"></i></span>
+              <span class="code-file">trajetoria.js</span>
+            </div>
+            <pre class="code-body"><span class="c">// do código ao circuito</span>
+<span class="k">const</span> rota = [
+  <span class="s">"código"</span>,
+  <span class="s">"interface"</span>,
+  <span class="s">"circuito"</span>
+];
+rota.<span class="f">forEach</span>(aprender)<span class="cursor"></span></pre>
+          </div>
+
+          <div class="visual-card circuit-card">
+            <svg viewBox="0 0 300 220" class="circuit-svg">
+              <path d="M0 110 H90 L110 90 H160 L175 110 H300" />
+              <path d="M40 30 H80 L95 50 V80" />
+              <path d="M210 40 V70 L230 90 H300" />
+              <path d="M60 180 H120 L140 160 H220" />
+              <rect x="66" y="26" width="8" height="8" class="node" />
+              <rect x="206" y="36" width="8" height="8" class="node" />
+              <rect x="106" y="106" width="8" height="8" class="node hi" />
+              <rect x="156" y="106" width="8" height="8" class="node hi" />
+              <rect x="216" y="176" width="8" height="8" class="node" />
+            </svg>
+            <span class="fig-label">Fig. 02 · Circuito</span>
+          </div>
+
+          <div class="visual-card chip-card">
+            <svg viewBox="0 0 120 120" class="chip-svg">
+              <g class="pins">
+                <line x1="30" y1="6" x2="30" y2="20"/><line x1="48" y1="6" x2="48" y2="20"/><line x1="66" y1="6" x2="66" y2="20"/><line x1="84" y1="6" x2="84" y2="20"/>
+                <line x1="30" y1="100" x2="30" y2="114"/><line x1="48" y1="100" x2="48" y2="114"/><line x1="66" y1="100" x2="66" y2="114"/><line x1="84" y1="100" x2="84" y2="114"/>
+                <line x1="6" y1="30" x2="20" y2="30"/><line x1="6" y1="48" x2="20" y2="48"/><line x1="6" y1="66" x2="20" y2="66"/><line x1="6" y1="84" x2="20" y2="84"/>
+                <line x1="100" y1="30" x2="114" y2="30"/><line x1="100" y1="48" x2="114" y2="48"/><line x1="100" y1="66" x2="114" y2="66"/><line x1="100" y1="84" x2="114" y2="84"/>
+              </g>
+              <rect x="20" y="20" width="80" height="80" rx="8" class="chip-body"/>
+              <rect x="40" y="40" width="40" height="40" rx="4" class="chip-core"/>
+              <circle cx="60" cy="60" r="4" class="chip-dot"/>
+            </svg>
+            <span class="chip-label">ESP32</span>
+          </div>
+
+          <span class="fig-caption">fig. 01 — código → circuito</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO DE ÁREAS -->
+    <section class="areas" aria-label="Áreas de interesse">
+      <ul class="container areas-grid">
+        <li><span class="area-num">01</span><h3>Software</h3><p>JavaScript · Python · C · Node.js</p></li>
+        <li><span class="area-num">02</span><h3>Interfaces</h3><p>HTML · CSS · Figma</p></li>
+        <li><span class="area-num">03</span><h3>Hardware</h3><p>Arduino · ESP32 · ESP32-CAM</p></li>
+        <li><span class="area-num">04</span><h3>Dados</h3><p>MySQL · Firebase</p></li>
+      </ul>
+    </section>
+
+    <!-- PROJETOS EM DESTAQUE -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-eyebrow"><span class="num">01</span> <span class="line"></span> Projetos em destaque</p>
+            <h2 class="section-title">O que já saiu do papel<span class="accent-dot">.</span></h2>
+            <p class="section-lead">Projetos acadêmicos e pessoais, com o problema, a solução e o que aprendi em cada um.</p>
+          </div>
+          <a href="projetos.html" class="btn btn-outline">
+            Todos os projetos
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Destaque: Readapt -->
+          <article class="project-card project-featured">
+            <div class="project-visual">
+              <span class="tag-pill">01 · Tecnologia</span>
+              <span class="badge badge-dark">★ Em destaque</span>
+              <span class="project-big">ab</span>
+              <svg class="project-board" viewBox="0 0 200 140" aria-hidden="true">
+                <rect x="20" y="40" width="160" height="60" rx="8" />
+                <circle cx="40" cy="70" r="4" />
+                <circle cx="160" cy="70" r="4" />
+                <path d="M60 40 V20 M80 40 V20 M100 40 V20 M120 40 V20 M140 40 V20" />
+                <rect x="120" y="0" width="30" height="20" rx="3" />
+              </svg>
+            </div>
+            <div class="project-body">
+              <p class="project-kicker">Projeto acadêmico</p>
+              <h3 class="project-title">Readapt<span class="accent-dot">.</span></h3>
+              <p class="project-desc">
+                Tecnologia educacional para crianças de 6 a 10 anos com dificuldades de leitura e escrita ligadas à dislexia —
+                plataforma digital, atividades educativas e um protótipo físico com ESP32.
+              </p>
+              <ul class="mini-areas">
+                <li><span>01</span>Software</li>
+                <li><span>02</span>Conteúdo</li>
+                <li><span>03</span>Hardware</li>
+              </ul>
+              <ul class="tags">
+                <li>ESP32</li>
+                <li>ESP32-CAM</li>
+                <li class="tag-dashed">Tecnologias da plataforma digital</li>
+              </ul>
+              <div class="project-actions">
+                <a href="projetos.html#readapt" class="btn btn-primary">
+                  Ver projeto completo
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+                </a>
+                <span class="link-muted">GitHub</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Em breve: desenvolvimento -->
+          <article class="project-card project-soon project-dev">
+            <div class="project-visual">
+              <span class="tag-pill">02 · Desenvolvimento</span>
+              <span class="badge badge-dark">Em breve</span>
+              <svg class="soon-art" viewBox="0 0 400 200" aria-hidden="true">
+                <rect x="40" y="30" width="110" height="80" rx="6" />
+                <rect x="180" y="30" width="110" height="80" rx="6" />
+                <rect x="110" y="70" width="110" height="90" rx="6" />
+                <text x="130" y="100">&lt;/&gt;</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title soon-title">Próximo projeto</h3>
+              <p class="project-desc">Espaço reservado para um projeto de desenvolvimento.</p>
+              <ul class="tags tags-mono">
+                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              </ul>
+              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+            </div>
+          </article>
+
+          <!-- Em breve: design -->
+          <article class="project-card project-soon project-design">
+            <div class="project-visual">
+              <span class="tag-pill">03 · Design</span>
+              <span class="badge badge-dark">Em breve</span>
+              <svg class="soon-art" viewBox="0 0 400 200" aria-hidden="true">
+                <path d="M120 170 A80 80 0 0 1 280 170 Z" />
+                <circle cx="240" cy="90" r="40" />
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title soon-title">Próximo projeto</h3>
+              <p class="project-desc">Espaço reservado para um projeto de design de interfaces.</p>
+              <ul class="tags tags-mono">
+                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              </ul>
+              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE (PRÉVIA) -->
+    <section class="section section-alt">
+      <div class="container about-grid">
+        <div>
+          <p class="section-eyebrow"><span class="num">02</span> <span class="line"></span> Sobre mim</p>
+          <h2 class="section-title">Uma trajetória<br><span class="accent">em construção</span><span class="accent-dot">.</span></h2>
+
+          <dl class="facts">
+            <div>
+              <dt>Formação</dt>
+              <dd>Técnico integrado em TI</dd>
+            </div>
+            <div>
+              <dt>Áreas</dt>
+              <dd>Software, interfaces, hardware e dados</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="about-text">
+          <p class="about-lead">
+            Sou estudante de Tecnologia da Informação e ainda estou descobrindo até onde a área vai. Por enquanto, isso significa
+            escrever código, desenhar interfaces, experimentar com microcontroladores e aprender uma ferramenta nova sempre que um projeto pede.
+          </p>
+
+          <ul class="tags">
+            <li>Desenvolvimento de software</li>
+            <li>Design de interfaces</li>
+            <li>Hardware e sistemas embarcados</li>
+            <li>Banco de dados</li>
+            <li>Tecnologia educacional</li>
+            <li>Criação de soluções</li>
+          </ul>
+
+          <a href="sobre.html" class="btn btn-dark">
+            Conhecer minha história
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONHECIMENTOS -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-eyebrow"><span class="num">03</span> <span class="line"></span> Conhecimentos e tecnologias</p>
+            <h2 class="section-title">Ferramentas que venho explorando<span class="accent-dot">.</span></h2>
+            <p class="section-lead">Linguagens, plataformas e ferramentas com que tive contato nos estudos e projetos — da tela ao microcontrolador.</p>
+          </div>
+          <a href="sobre.html#conhecimentos" class="btn btn-outline">
+            Ver níveis
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <span class="skill-num">01</span>
+            <p class="skill-label">Desenvolvimento front-end</p>
+            <p class="skill-desc">A camada que as pessoas veem e usam.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-num">02</span>
+            <p class="skill-label">Desenvolvimento back-end</p>
+            <p class="skill-desc">Lógica, regras e o que roda por trás.</p>
+            <ul class="tags"><li>Node.js</li><li>Python</li><li>C</li></ul>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-num">03</span>
+            <p class="skill-label">Banco de dados</p>
+            <p class="skill-desc">Onde a informação fica guardada.</p>
+            <ul class="tags"><li>MySQL</li><li>Firebase</li></ul>
+          </article>
+
+          <article class="skill-card skill-wide skill-dark">
+            <span class="skill-num">04</span>
+            <p class="skill-label">Hardware e sistemas embarcados</p>
+            <p class="skill-desc">Microcontroladores, placas e protótipos físicos.</p>
+            <ul class="tags"><li>Arduino</li><li>Arduino IDE</li><li>ESP32</li><li>ESP32-CAM</li></ul>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-num">05</span>
+            <p class="skill-label">Design e interfaces</p>
+            <p class="skill-desc">Planejar telas antes de construir.</p>
+            <ul class="tags"><li>Figma</li><li>Canva</li></ul>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-num">06</span>
+            <p class="skill-label">Ferramentas de desenvolvimento</p>
+            <p class="skill-desc">O ambiente de trabalho do dia a dia.</p>
+            <ul class="tags"><li>Visual Studio Code</li><li>Git</li><li>GitHub</li></ul>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-num">07</span>
+            <p class="skill-label">Produtividade</p>
+            <p class="skill-desc">Documentos, planilhas e organização.</p>
+            <ul class="tags"><li>Microsoft Word</li><li>Microsoft Excel</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (CTA) -->
+    <section class="container cta-wrap" id="contato">
+      <div class="cta">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-ring" aria-hidden="true"></div>
+        <div class="cta-ring cta-ring-2" aria-hidden="true"></div>
+        <span class="cta-diamond" aria-hidden="true"></span>
+
+        <p class="cta-eyebrow">// 04 — Contato</p>
+        <h2 class="cta-title">Vamos construir algo <span class="accent">juntos?</span></h2>
+        <p class="cta-desc">
+          Estou aberta a oportunidades de estágio, projetos e conversas sobre tecnologia.
+          Conheça meus projetos ou envie uma mensagem.
+        </p>
+        <div class="hero-actions">
+          <a href="contato.html" class="btn btn-primary">
+            Entrar em contato
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+          <a href="projetos.html" class="btn btn-ghost btn-ghost-dark">Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Erika<span class="accent-dot">.</span></p>
+        <p class="footer-desc">Estudante de Tecnologia da Informação. Estudante de TI explorando software, interfaces e hardware.</p>
+        <div class="social-links">
+          <a href="#" class="social-pill" aria-disabled="true">GitHub <span class="status">a configurar</span></a>
+          <a href="#" class="social-pill" aria-disabled="true">LinkedIn <span class="status">a configurar</span></a>
+          <a href="#" class="social-pill" aria-disabled="true">E-mail <span class="status">a configurar</span></a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Páginas do site">
+        <p class="footer-title">// Páginas</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 Erika. Todos os direitos reservados.</span>
+        <span>Do código ao circuito — em construção contínua.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
