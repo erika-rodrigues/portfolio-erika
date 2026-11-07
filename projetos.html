@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos de Erika: trabalhos acadêmicos e pessoais, com problema, objetivo, funcionamento, tecnologias e participação.">
+  <title>Projetos | Erika</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projetos.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Início">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">Erika</span>
+        <span class="brand-path">/portfólio</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html" class="active" aria-current="page">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <span class="page-hero-num" aria-hidden="true">03</span>
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> 03 / 05 · Projetos</p>
+        <h1 class="page-title">
+          Ideias que viraram <br>
+          <span class="accent">projetos</span><span class="accent-dot">.</span>
+        </h1>
+        <p class="page-lead">
+          Trabalhos acadêmicos e pessoais, todos apresentados da mesma forma: o problema, o objetivo, como funciona,
+          as tecnologias, a minha participação e o que aprendi no caminho.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters-bar" aria-label="Filtrar projetos">
+      <div class="container filters-inner">
+        <div class="filters" role="group" aria-label="Categorias">
+          <button class="filter-chip is-active" type="button" data-filter="todos">Todos <span>4</span></button>
+          <button class="filter-chip" type="button" data-filter="desenvolvimento">Desenvolvimento <span>1</span></button>
+          <button class="filter-chip" type="button" data-filter="design">Design <span>1</span></button>
+          <button class="filter-chip" type="button" data-filter="tecnologia">Tecnologia <span>2</span></button>
+        </div>
+        <p class="filters-count">4 projetos</p>
+      </div>
+    </section>
+
+    <!-- LISTA DE PROJETOS -->
+    <section class="section-tight">
+      <div class="container projects-list">
+
+        <!-- 01 · Readapt (em destaque) -->
+        <article class="project-card project-featured" id="readapt" data-category="tecnologia">
+          <div class="project-visual">
+            <img class="project-img" src="images/readapt.jpg" alt="Ilustração do Readapt: as letras ab e uma placa ESP32 com câmera">
+            <span class="tag-pill">01 · Tecnologia</span>
+            <span class="badge badge-dark">★ Em destaque</span>
+          </div>
+          <div class="project-body">
+            <p class="project-kicker">Projeto acadêmico</p>
+            <h2 class="project-title">Readapt<span class="accent-dot">.</span></h2>
+            <p class="project-desc">
+              Tecnologia educacional para crianças de 6 a 10 anos com dificuldades de leitura e escrita ligadas à dislexia —
+              plataforma digital, atividades educativas e um protótipo físico com ESP32.
+            </p>
+            <ul class="mini-areas">
+              <li><span>01</span>Software</li>
+              <li><span>02</span>Conteúdo</li>
+              <li><span>03</span>Hardware</li>
+            </ul>
+            <ul class="tags">
+              <li>ESP32</li>
+              <li>ESP32-CAM</li>
+              <li class="tag-dashed">Tecnologias da plataforma digital</li>
+            </ul>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary">
+                Ver projeto completo
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+              </a>
+              <span class="link-muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>GitHub</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="projects-grid">
+          <!-- 02 · Desenvolvimento (em breve) -->
+          <article class="project-card project-soon project-dev" data-category="desenvolvimento">
+            <div class="project-visual">
+              <img class="project-img" src="images/desenvolvimento.jpg" alt="">
+              <span class="tag-pill">02 · Desenvolvimento</span>
+              <span class="badge badge-dark">Em breve</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title soon-title">Próximo projeto</h3>
+              <p class="project-desc">Espaço reservado para um projeto de desenvolvimento.</p>
+              <ul class="tags tags-mono">
+                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              </ul>
+              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+            </div>
+          </article>
+
+          <!-- 03 · Design (em breve) -->
+          <article class="project-card project-soon project-design" data-category="design">
+            <div class="project-visual">
+              <img class="project-img" src="images/design.jpg" alt="">
+              <span class="tag-pill">03 · Design</span>
+              <span class="badge badge-dark">Em breve</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title soon-title">Próximo projeto</h3>
+              <p class="project-desc">Espaço reservado para um projeto de design de interfaces.</p>
+              <ul class="tags tags-mono">
+                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              </ul>
+              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+            </div>
+          </article>
+
+          <!-- 04 · Tecnologia (em breve) — imagem ainda a enviar -->
+          <article class="project-card project-soon project-circuit" data-category="tecnologia">
+            <div class="project-visual">
+              <img class="project-img" src="images/circuito.jpg" alt=""><span class="tag-pill">04 · Tecnologia</span>
+              <span class="badge badge-dark">Em breve</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title soon-title">Próximo projeto</h3>
+              <p class="project-desc">Espaço reservado para um projeto de tecnologia.</p>
+              <ul class="tags tags-mono">
+                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              </ul>
+              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (CTA) -->
+    <section class="container cta-wrap" id="contato">
+      <div class="cta">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-ring" aria-hidden="true"></div>
+        <div class="cta-ring cta-ring-2" aria-hidden="true"></div>
+        <span class="cta-diamond" aria-hidden="true"></span>
+
+        <p class="cta-eyebrow">// 05 — Contato</p>
+        <h2 class="cta-title">Vamos construir algo<br><span class="accent">juntos?</span></h2>
+        <p class="cta-desc">
+          Estou aberta a oportunidades de estágio, projetos e conversas sobre<br>tecnologia.
+          Conheça meus projetos ou envie uma mensagem.
+        </p>
+        <div class="hero-actions">
+          <a href="contato.html" class="btn btn-primary">
+            Entrar em contato
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+          <a href="projetos.html" class="btn btn-ghost btn-ghost-dark">Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Erika<span class="accent-dot">.</span></p>
+        <p class="footer-desc">Estudante de Tecnologia da Informação. Estudante de TI explorando software, interfaces e hardware.</p>
+        <div class="social-links">
+          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>GitHub</a>
+          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg>LinkedIn</a>
+          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>E-mail</a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Páginas do site">
+        <p class="footer-title">// Páginas</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 Erika. Todos os direitos reservados.</span>
+        <span>Do código ao circuito — em construção contínua.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
