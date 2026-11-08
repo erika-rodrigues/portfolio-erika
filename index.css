@@ -343,3 +343,320 @@ h4 {
 }
 
 
+/* ---------- 6. Hero ---------- */
+.hero {
+  padding: 72px 0 96px;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+
+.hero-title {
+  margin: 28px 0;
+  font-size: clamp(64px, 8.5vw, 116px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.hero-title > .muted,
+.hero-title-line {
+  display: block;
+}
+
+.hero-lead {
+  max-width: 520px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.hero-desc {
+  margin-top: 20px;
+  max-width: 540px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.social-pill svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.social-pill[aria-disabled="true"] {
+  cursor: default;
+}
+
+.status {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+}
+
+/* Painel visual à direita */
+.hero-visual {
+  position: relative;
+  height: 500px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.coords {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-2);
+}
+
+.fig-caption {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-2);
+  z-index: 2;
+}
+
+.orb {
+  position: absolute;
+  top: 30px;
+  right: 34px;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--blue-light), var(--blue));
+}
+
+.orb-ring {
+  position: absolute;
+  top: -7px;
+  right: -3px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px solid var(--navy-line, rgba(122, 162, 255, 0.2));
+}
+
+/* Janela de código */
+.code-window {
+  position: absolute;
+  top: 74px;
+  left: 58px;
+  z-index: 2;
+  width: 300px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.dots i.blue {
+  background: var(--blue);
+}
+
+.code-file {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.code-body {
+  margin: 0;
+  padding: 14px 18px 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre;
+}
+
+.code-body .c {
+  color: var(--muted-2);
+  font-style: italic;
+}
+
+.code-body .k,
+.code-body .f {
+  color: var(--blue);
+}
+
+.code-body .s {
+  color: #16a34a;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  margin-left: 2px;
+  background: var(--blue);
+  vertical-align: middle;
+}
+
+/* Cartões visuais (circuito e chip) */
+.visual-card {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.circuit-card {
+  left: 28px;
+  bottom: 28px;
+  width: 235px;
+  height: 206px;
+  border-color: transparent;
+  background: linear-gradient(160deg, var(--navy-2), var(--navy));
+}
+
+.fig-label {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chip-card {
+  right: 39px;
+  bottom: 47px;
+  width: 166px;
+  height: 166px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
+}
+
+.chip-icon {
+  font-size: 88px;
+  color: var(--blue);
+  margin-top: -18px;
+}
+
+.chip-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-2);
+}
+
+
