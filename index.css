@@ -660,3 +660,43 @@ h4 {
 }
 
 
+/* ---------- 7. Faixa de áreas ---------- */
+.areas {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.areas-grid li {
+  padding: 28px 24px;
+  border-right: 1px solid var(--line);
+}
+
+.areas-grid li:last-child {
+  border-right: 0;
+}
+
+.area-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.areas-grid h3 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.areas-grid p {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
