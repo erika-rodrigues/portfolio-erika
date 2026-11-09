@@ -1081,3 +1081,78 @@ h4 {
 }
 
 
+/* ---------- 10. Conhecimentos ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skills-grid .skill-card:nth-child(4),
+.skills-grid .skill-card:nth-child(6) {
+  grid-column: span 2;
+}
+
+.skill-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.skill-num {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+}
+
+.skill-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.skill-desc {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.skill-card .tags {
+  margin-top: 18px;
+}
+
+.skill-dark {
+  background: linear-gradient(160deg, var(--navy-2), var(--navy));
+  border-color: transparent;
+  color: #fff;
+}
+
+.skill-dark .skill-num {
+  -webkit-text-stroke: 0;
+  color: var(--blue-light);
+  font-size: 48px;
+}
+
+.skill-dark .skill-label,
+.skill-dark .skill-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.skill-dark .tags li {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+
