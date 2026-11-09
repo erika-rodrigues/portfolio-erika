@@ -1156,3 +1156,99 @@ h4 {
 }
 
 
+/* ---------- 11. Chamada final ---------- */
+.cta-wrap {
+  margin-bottom: 96px;
+}
+
+.cta {
+  position: relative;
+  padding: 96px 72px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #13295a 0%, #0f1f3f 60%, #0b1830 100%);
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(15, 31, 63, 0.6);
+}
+
+.cta-glow {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.55), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-ring {
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 176, 255, 0.25);
+  pointer-events: none;
+}
+
+.cta-ring-2 {
+  top: -30px;
+  right: -40px;
+  width: 260px;
+  height: 260px;
+}
+
+.cta-diamond {
+  position: absolute;
+  top: 90px;
+  right: 96px;
+  width: 14px;
+  height: 14px;
+  background: var(--blue-light);
+  transform: rotate(45deg);
+}
+
+.cta-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Texto da chamada sempre acima dos desenhos decorativos */
+.cta-eyebrow,
+.cta-title,
+.cta-desc,
+.cta .hero-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  max-width: none;
+  white-space: nowrap;
+  margin: 24px 0 20px;
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1;
+  color: #f2f5fb;
+}
+
+.cta-title .accent {
+  color: var(--blue-light);
+}
+
+.cta-desc {
+  max-width: none;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cta .hero-actions {
+  margin-top: 36px;
+}
+
+
