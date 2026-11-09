@@ -1024,3 +1024,60 @@ h4 {
 }
 
 
+/* ---------- 9. Prévia da Sobre ---------- */
+.section-alt {
+  background: var(--bg-tint);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.facts {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.facts > div {
+  padding: 22px 24px;
+}
+
+.facts > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.facts dd {
+  margin: 8px 0 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.about-lead {
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.about-text .tags {
+  margin: 28px 0 36px;
+}
+
+
