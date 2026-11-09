@@ -271,3 +271,61 @@ h4 {
 }
 
 
+/* ---------- 2. Hero da página ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+
+.page-hero {
+  position: relative;
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.page-hero-num {
+  position: absolute;
+  right: 4%;
+  top: 50px;
+  font-family: var(--font-display);
+  font-size: 190px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+}
+
+.page-title {
+  margin: 28px 0 24px;
+  font-size: clamp(64px, 8vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.page-lead {
+  max-width: 640px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+
