@@ -962,3 +962,76 @@ h4 {
 }
 
 
+/* ---------- 6. Cards 04 a 07 ---------- */
+.skills-grid .skill-card:nth-child(4),
+.skills-grid .skill-card:nth-child(6) {
+  grid-column: span 2;
+}
+
+.skill-items-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
+
+.skill-items-2col li {
+  flex-wrap: wrap;
+}
+
+.used-in {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blue-light);
+}
+
+.skill-dark {
+  background:
+    linear-gradient(160deg, rgba(19, 41, 79, 0.92), rgba(15, 31, 63, 0.96)),
+    url("images/circuito.jpg") center / cover;
+  border-color: transparent;
+  color: #fff;
+}
+
+.skill-dark .skill-num {
+  -webkit-text-stroke: 0;
+  color: var(--blue-light);
+  font-size: 36px;
+}
+
+.skill-dark .skill-label,
+.skill-dark .skill-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Título do card azul em azul claro */
+.skill-dark .skill-label {
+  color: var(--blue-light);
+}
+
+.skill-dark .skill-items li {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.skill-dark .skill-items li span {
+  color: #fff;
+}
+
+.skill-dark .level-tag {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skill-dark .used-in {
+  color: var(--blue-light);
+}
+
+.skill-dark .tags li {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+
