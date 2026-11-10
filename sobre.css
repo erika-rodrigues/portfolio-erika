@@ -519,3 +519,446 @@ h4 {
 }
 
 
+/* ---------- 5. Níveis e cards 01 a 03 ---------- */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 48px 0;
+}
+
+.level-card {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.level-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+}
+
+/* Nível: 3 quadradinhos, pintados conforme o nível (1, 2 ou 3) */
+.pips {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.pips i {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--blue-light);
+  border-radius: 2px;
+  background: transparent;
+}
+
+.pips.p1 i:nth-child(1),
+.pips.p2 i:nth-child(-n+2),
+.pips.p3 i {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.skill-num {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+}
+
+.skill-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.skill-desc {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.skill-items {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-items li span {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* Último item de cada lista não tem linha embaixo */
+.skill-items:not(.skill-items-2col) li:last-child {
+  border-bottom: 0;
+}
+
+.skill-items-2col li:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+
+/* Fotos de Como cheguei, logos e foto da FIAP */
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.photo-pair img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.logo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.logo-row img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.wide-photo {
+  margin: 16px 0 0;
+}
+
+.wide-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Seção Como cheguei: foto de fundo com véu claro para o texto ficar legível */
+.cheguei-section {
+  background-image:
+    linear-gradient(rgba(244, 246, 250, 0.9), rgba(244, 246, 250, 0.9)),
+    url("images/tony-fundo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Linha única com os 5 cards de "Para onde quero ir" (mesma altura, terminam juntos) */
+/* Seção Para onde quero ir: cards da esquerda e da direita com a base alinhada */
+.split:has(.targets-left) {
+  align-items: stretch;
+}
+
+.split:has(.targets-left) > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.split:has(.targets-left) .split-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bradesco em cima e FIAP embaixo, deitados na horizontal */
+.targets-left {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.targets-left .mini-card {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split:has(.targets-left) .top-jobs {
+  margin-top: auto;
+}
+
+/* Três profissões em quadradinhos */
+.top-jobs li {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 0;
+}
+
+
+.targets-row .mini-card,
+.targets-row .top-jobs li {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Três profissões lado a lado, na horizontal */
+.top-jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Concluído em azul na formação */
+.edu-done {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Como cheguei: texto à esquerda, foto com véu azul translúcido à direita */
+.cheguei-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.cheguei-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.cheguei-grid .body-text {
+  margin-top: 24px;
+}
+
+.cheguei-photo {
+  position: relative;
+  min-height: 420px;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.cheguei-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+}
+
+.cheguei-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(37, 99, 235, 0.45);
+}
+
+
+/* Mini cards Bradesco e FIAP */
+.mini-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.mini-card {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.mini-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.mini-card h3 {
+  margin: 10px 0 8px;
+  font-size: 22px;
+}
+
+/* Cards com a foto ao fundo, em camada escura translúcida para o texto ler bem */
+.mini-card-bradesco,
+.mini-card-fiap {
+  background-size: cover;
+  background-position: center;
+  border-color: transparent;
+  box-shadow: none;
+  color: #fff;
+}
+
+.mini-card-bradesco {
+  background-image:
+    linear-gradient(rgba(15, 31, 63, 0.7), rgba(15, 31, 63, 0.7)),
+    url("images/bradesco-card.png");
+}
+
+.mini-card-fiap {
+  background-image:
+    linear-gradient(rgba(15, 31, 63, 0.7), rgba(15, 31, 63, 0.7)),
+    url("images/fiap-card.png");
+}
+
+/* Rótulo branco arredondado e textos brancos */
+.mini-card-bradesco .mini-label,
+.mini-card-fiap .mini-label {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+}
+
+.mini-card-bradesco h3,
+.mini-card-fiap h3 {
+  color: #fff;
+}
+
+.mini-card.mini-card-bradesco p,
+.mini-card.mini-card-fiap p {
+  color: #fff;
+}
+
+.mini-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Top 3 profissões */
+.top-jobs {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0 0;
+}
+
+.top-jobs li {
+  padding: 22px 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.top-jobs span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.top-jobs h3 {
+  margin-top: 12px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+/* Títulos dos cards (O que já usei) em azul; numerações mantêm o estilo original */
+.skill-card:not(.skill-dark) .skill-label {
+  color: var(--blue);
+}
+
+/* Níveis: só os quadradinhos */
+.skill-items .level-tag {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.skill-dark .pips i {
+  border-color: #fff;
+}
+
+.skill-dark .pips.p1 i:nth-child(1),
+.skill-dark .pips.p2 i:nth-child(-n+2),
+.skill-dark .pips.p3 i {
+  background: #fff;
+  border-color: #fff;
+}
+
+/* Informações de formação (instituição e período) */
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.edu-info li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.level-tag {
+  font-style: normal;
+  padding: 3px 10px;
+  border: 1px dashed var(--blue-light);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blue);
+}
+
+
