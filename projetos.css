@@ -325,3 +325,64 @@ h4 {
 }
 
 
+/* ---------- 3. Filtros ---------- */
+.filters-bar {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.filters-inner {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-chip span {
+  color: var(--muted-2);
+}
+
+.filter-chip:hover {
+  border-color: var(--blue);
+}
+
+.filter-chip.is-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.filter-chip.is-active span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filters-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+
