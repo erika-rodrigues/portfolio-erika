@@ -723,3 +723,12 @@ h4 {
 }
 
 
+
+
+/* ---------- 6. Card em breve de tecnologia ---------- */
+.project-circuit .project-visual {
+  height: 335px;
+  min-height: 0;
+}
+
+
