@@ -573,3 +573,14 @@ h4 {
 }
 
 
+/* ---------- 3. Linha do tempo: item 03 (projeto) ---------- */
+.tl-sub {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.tl-card .tags {
+  margin-top: 16px;
+}
+
