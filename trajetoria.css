@@ -606,3 +606,13 @@ h4 {
 }
 
 
+/* ---------- 5. Espaços reservados 06 e 07 ---------- */
+.ph-box-title {
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+
