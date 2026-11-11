@@ -347,3 +347,229 @@ h4 {
 }
 
 
+/* ---------- 2. Linha do tempo (estrutura e itens 01 e 02) ---------- */
+.section-tight {
+  padding: 56px 0;
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.legend {
+  display: flex;
+  gap: 18px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-on {
+  background: var(--blue);
+}
+
+.dot-off {
+  border: 1px dashed var(--muted-2);
+}
+
+.timeline {
+  position: relative;
+  padding: 24px 0 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--blue-light);
+  opacity: 0.6;
+}
+
+.tl-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 48px;
+}
+
+.tl-left {
+  padding-right: 48px;
+}
+
+.tl-right {
+  margin-left: 50%;
+  padding-left: 48px;
+}
+
+.tl-marker {
+  position: absolute;
+  top: 30px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px dashed var(--muted-2);
+  background: var(--bg);
+  z-index: 1;
+}
+
+.tl-on {
+  background: var(--blue);
+  border: 0;
+  box-shadow: 0 0 0 5px var(--blue-soft);
+}
+
+.tl-left .tl-marker {
+  right: -7px;
+}
+
+.tl-right .tl-marker {
+  left: -7px;
+}
+
+.tl-card {
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.tl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.tl-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.tl-num {
+  margin-right: 4px;
+  color: var(--blue);
+}
+
+.tl-title {
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.tl-desc {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.ph-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px dashed var(--blue-light);
+  border-radius: 999px;
+  background: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.ph-pill-block {
+  margin: 10px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags-mono li {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.info-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Botão de certificado dentro dos cards */
+.btn-cert {
+  margin-top: 14px;
+  padding: 9px 18px;
+  font-size: 14px;
+}
+
+.info-pill-block {
+  display: flex;
+  width: fit-content;
+  margin: 10px 0;
+}
+
+/* Lista de cursos dentro do card */
+.tl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tl-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.tl-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
+
