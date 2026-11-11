@@ -584,3 +584,25 @@ h4 {
   margin-top: 16px;
 }
 
+/* ---------- 4. Espaços reservados 04 e 05 ---------- */
+.tl-card-empty {
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.ph-box {
+  padding: 12px 14px;
+  border: 1px dashed var(--blue-light);
+  border-radius: 12px;
+  background: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ph-box + .ph-pill-block,
+.ph-box + .ph-box {
+  margin-top: 10px;
+}
+
+
