@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="projetos.css">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}</script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         <span class="brand-path">/portfólio</span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegação principal">
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -31,7 +32,7 @@
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
@@ -96,16 +97,14 @@
               <li><span>03</span>Hardware</li>
             </ul>
             <ul class="tags">
-              <li>ESP32</li>
-              <li>ESP32-CAM</li>
-              <li class="tag-dashed">Tecnologias da plataforma digital</li>
-            </ul>
+                <li>Python</li><li>GDevelop</li><li>ESP32</li><li>Arduino IDE</li>
+              </ul>
             <div class="project-actions">
-              <a href="#" class="btn btn-primary">
+              <a href="readapt.html" class="btn btn-primary">
                 Ver projeto completo
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
               </a>
-              <span class="link-muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>GitHub</span>
+              <a href="https://github.com/erika-rodrigues/Readapt_tcc" class="link-muted" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>GitHub</a>
             </div>
           </div>
         </article>
@@ -119,12 +118,16 @@
               <span class="badge badge-dark">Em breve</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title soon-title">Próximo projeto</h3>
-              <p class="project-desc">Espaço reservado para um projeto de desenvolvimento.</p>
-              <ul class="tags tags-mono">
-                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              <h3 class="project-title">Vizion<span class="accent-dot">.</span></h3>
+              <p class="project-desc">Website sobre astronomia e exploração espacial, desenvolvido com identidade visual própria e foco na apresentação de conteúdos sobre o universo por meio de uma interface moderna, imersiva e intuitiva.</p>
+              <ul class="tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li>
               </ul>
-              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary">Ver projeto completo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+                <span class="link-muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg> GitHub</span>
+              </div>
+
             </div>
           </article>
 
@@ -136,28 +139,29 @@
               <span class="badge badge-dark">Em breve</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title soon-title">Próximo projeto</h3>
-              <p class="project-desc">Espaço reservado para um projeto de design de interfaces.</p>
-              <ul class="tags tags-mono">
-                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
+              <h3 class="project-title">Corpo em Ação<span class="accent-dot">.</span></h3>
+              <p class="project-desc">Plataforma web educacional desenvolvida para o estudo interativo dos sistemas do corpo humano, com recursos visuais e conteúdos organizados para facilitar a compreensão e tornar o aprendizado mais dinâmico.</p>
+              <ul class="tags">
+                <li>Design de Interfaces</li><li>Prototipação</li><li>Figma</li>
               </ul>
-              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary">Ver projeto completo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+                <span class="link-muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg> GitHub</span>
+              </div>
+
             </div>
           </article>
 
           <!-- 04 · Tecnologia (em breve) — imagem ainda a enviar -->
           <article class="project-card project-soon project-circuit" data-category="tecnologia">
             <div class="project-visual">
-              <img class="project-img" src="images/circuito.jpg" alt=""><span class="tag-pill">04 · Tecnologia</span>
+              <img class="project-img" src="images/circuito.jpg" alt="">
               <span class="badge badge-dark">Em breve</span>
             </div>
             <div class="project-body">
+              <p class="project-kicker">04 · Tecnologia</p>
               <h3 class="project-title soon-title">Próximo projeto</h3>
               <p class="project-desc">Espaço reservado para um projeto de tecnologia.</p>
-              <ul class="tags tags-mono">
-                <li>Problema</li><li>Objetivo</li><li>Como funciona</li><li>Tecnologias</li><li>Participação</li>
-              </ul>
-              <p class="code-comment">// Espaço reservado para um próximo projeto</p>
             </div>
           </article>
         </div>
@@ -173,9 +177,9 @@
         <span class="cta-diamond" aria-hidden="true"></span>
 
         <p class="cta-eyebrow">// 05 — Contato</p>
-        <h2 class="cta-title">Vamos construir algo<br><span class="accent">juntos?</span></h2>
+        <h2 class="cta-title">Vamos construir algo <span class="accent">juntos?</span></h2>
         <p class="cta-desc">
-          Estou aberta a oportunidades de estágio, projetos e conversas sobre<br>tecnologia.
+          Estou aberta a oportunidades de estágio, projetos e conversas sobre tecnologia.
           Conheça meus projetos ou envie uma mensagem.
         </p>
         <div class="hero-actions">
@@ -197,9 +201,9 @@
         <p class="footer-brand">Erika<span class="accent-dot">.</span></p>
         <p class="footer-desc">Estudante de Tecnologia da Informação. Estudante de TI explorando software, interfaces e hardware.</p>
         <div class="social-links">
-          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>GitHub</a>
-          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg>LinkedIn</a>
-          <a href="#" class="social-pill" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>E-mail</a>
+          <a href="https://github.com/erika-rodrigues" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/erika-rodriguess/" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg> LinkedIn</a>
+          <a href="mailto:roliveira.erika@gmail.com" class="social-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg> E-mail</a>
         </div>
       </div>
 
