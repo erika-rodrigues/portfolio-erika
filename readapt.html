@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Readapt: tecnologia educacional para crianças de 6 a 10 anos com dificuldades de leitura e escrita ligadas à dislexia.">
+  <title>Readapt | Erika</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="readapt.css">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}</script>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Início">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">Erika</span>
+        <span class="brand-path">/portfólio</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html" class="active" aria-current="page">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="project-top">
+    <!-- APRESENTAÇÃO -->
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-text">
+          <a href="projetos.html" class="back-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+            Todos os projetos
+          </a>
+
+          <p class="eyebrow"><span class="eyebrow-dot"></span> 01 — Apresentação · Tecnologia</p>
+
+          <h1 class="project-title">Readapt<span class="accent-dot">.</span></h1>
+
+          <p class="project-lead">
+            O Readapt é uma proposta de tecnologia educacional para apoiar crianças de 6 a 10 anos com dificuldades de leitura
+            e escrita relacionadas à dislexia. O projeto une uma plataforma digital, atividades educativas e um protótipo físico
+            construído com ESP32 e ESP32-CAM.
+          </p>
+        </div>
+
+        <aside class="project-meta" aria-label="Informações do projeto">
+          <div class="meta-cell">
+            <span class="meta-label">Categoria</span>
+            <span class="meta-value">Tecnologia</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">Tipo</span>
+            <span class="meta-value">Projeto acadêmico</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">Público</span>
+            <span class="meta-value">Crianças de 6 a 10 anos</span>
+          </div>
+          <div class="meta-cell">
+            <span class="meta-label">Ano</span>
+            <span class="meta-value">2026</span>
+          </div>
+          <div class="meta-cell meta-cell-wide">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Concluído</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOTO DE DESTAQUE -->
+    <section class="project-cover" aria-label="Foto do projeto">
+      <div class="container">
+        <div class="cover-photo"><span>Foto do projeto — a adicionar</span></div>
+      </div>
+    </section>
+
+    </div>
+
+    <!-- CORPO DO PROJETO: menu fixo na lateral + seções -->
+    <section class="project-body">
+      <div class="container project-body-grid">
+
+        <aside class="project-nav" aria-label="Neste projeto">
+          <p class="nav-title">// Neste projeto</p>
+          <ol>
+            <li><a href="#problema"><span>02</span> Problema e necessidade</a></li>
+            <li><a href="#objetivo"><span>03</span> Objetivo</a></li>
+            <li><a href="#funciona"><span>04</span> Como funciona</a></li>
+            <li><a href="#tecnologias"><span>05</span> Tecnologias utilizadas</a></li>
+            <li><a href="#processo"><span>06</span> Processo de desenvolvimento</a></li>
+            <li><a href="#participacao"><span>07</span> Minha participação</a></li>
+            <li><a href="#aprendizados"><span>08</span> Principais aprendizados</a></li>
+            <li><a href="#imagens"><span>09</span> Imagens e capturas de tela</a></li>
+            <li><a href="#demonstracao"><span>10</span> Demonstração e repositório</a></li>
+          </ol>
+        </aside>
+
+        <div class="project-content">
+
+          <!-- 02 · Problema -->
+          <section class="pj-section" id="problema">
+            <p class="section-eyebrow"><span class="num">02</span> <span class="line"></span></p>
+            <h2 class="pj-title">Problema e necessidade</h2>
+            <p class="pj-text">
+              O projeto Readapt surgiu a partir da identificação das dificuldades enfrentadas por crianças com dislexia durante o processo
+              de alfabetização, especialmente em atividades relacionadas à leitura, escrita, reconhecimento de palavras e diferenciação de letras.
+            </p>
+            <p class="pj-text">
+              Para compreender melhor essa realidade, o grupo realizou uma pesquisa por meio de um formulário online, que obteve 46 respostas.
+              Os resultados demonstraram a percepção dos participantes sobre os impactos da dislexia na aprendizagem, a insuficiência do suporte
+              oferecido pelas escolas e a importância da utilização de recursos tecnológicos como apoio educacional.
+            </p>
+            <p class="pj-text">
+              A partir dos dados coletados, identificou-se a necessidade de desenvolver uma solução que auxiliasse crianças de 6 a 10 anos no
+              processo de aprendizagem, oferecendo recursos interativos e complementares às práticas educacionais tradicionais.
+            </p>
+          </section>
+
+          <!-- 03 · Objetivo -->
+          <section class="pj-section" id="objetivo">
+            <p class="section-eyebrow"><span class="num">03</span> <span class="line"></span></p>
+            <h2 class="pj-title">Objetivo</h2>
+            <p class="pj-text">
+              Dessa forma, o Readapt foi idealizado com o objetivo de utilizar a tecnologia como ferramenta de apoio ao desenvolvimento das
+              habilidades de leitura e escrita, respeitando as necessidades individuais das crianças.
+            </p>
+          </section>
+
+          <!-- 04 · Como funciona -->
+          <section class="pj-section" id="funciona">
+            <blockquote class="principle">
+              <p class="principle-kicker">// Princípio do projeto</p>
+              <p class="principle-text">
+                A tecnologia entra como apoio: o Readapt complementa o trabalho dos professores e não substitui o acompanhamento pedagógico.
+              </p>
+            </blockquote>
+
+            <p class="section-eyebrow"><span class="num">04</span> <span class="line"></span></p>
+            <h2 class="pj-title">Como funciona</h2>
+
+            <div class="parts">
+              <article class="part-row">
+                <div class="part-card">
+                  <div class="part-head">
+                    <span class="part-tag">Software</span>
+                    <span class="part-num">01</span>
+                  </div>
+                  <h3>Aplicativo de acompanhamento</h3>
+                  <p>Permite que os responsáveis e as crianças acompanhem o desempenho e a evolução das atividades realizadas no robô.</p>
+                </div>
+                <div class="part-photo"><span>Foto do aplicativo — a adicionar</span></div>
+              </article>
+
+              <article class="part-row part-row-rev">
+                <div class="part-photo"><span>Foto do robô — a adicionar</span></div>
+                <div class="part-card">
+                  <div class="part-head">
+                    <span class="part-tag">Hardware</span>
+                    <span class="part-num">02</span>
+                  </div>
+                  <h3>Robô interativo</h3>
+                  <p>Recebe o conteúdo processado pelos óculos e apresenta as atividades em sua tela, com recursos de áudio e interação física.</p>
+                </div>
+              </article>
+
+              <article class="part-row">
+                <div class="part-card">
+                  <div class="part-head">
+                    <span class="part-tag">Conteúdo</span>
+                    <span class="part-num">03</span>
+                  </div>
+                  <h3>Game educativo</h3>
+                  <p>Aventura criada no GDevelop, com cinco fases. Para avançar, a criança completa desafios de formação e complementação de palavras.</p>
+                </div>
+                <div class="part-photo"><span>Foto do game — a adicionar</span></div>
+              </article>
+            </div>
+</section>
+
+          <!-- 05 · Tecnologias -->
+          <section class="pj-section" id="tecnologias">
+            <p class="section-eyebrow"><span class="num">05</span> <span class="line"></span></p>
+            <h2 class="pj-title">Tecnologias utilizadas</h2>
+            <ul class="tags">
+              <li>Figma</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>GDevelop</li>
+              <li>APIs</li>
+              <li>Tesseract OCR</li>
+              <li>ESP32</li>
+              <li>ESP32-CAM</li>
+              <li>Arduino IDE</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Wi-Fi</li>
+            </ul>
+          </section>
+
+          <!-- 06 · Processo -->
+          <section class="pj-section" id="processo">
+            <p class="section-eyebrow"><span class="num">06</span> <span class="line"></span></p>
+            <h2 class="pj-title">Processo de desenvolvimento</h2>
+            <p class="pj-text">O desenvolvimento do Readapt foi organizado em três etapas principais.</p>
+            <ol class="steps">
+              <li>
+                <span class="step-num">01</span>
+                <div>
+                  <h3>Pesquisa e identificação do problema</h3>
+                  <p>Levantamento de informações sobre a dislexia e suas dificuldades no processo de alfabetização, realização de pesquisa quantitativa por meio de formulário online, análise dos resultados e identificação das necessidades do público-alvo.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">02</span>
+                <div>
+                  <h3>Planejamento e desenvolvimento das soluções</h3>
+                  <p>Definição da proposta tecnológica, planejamento das funcionalidades, criação da identidade visual, estruturação do site e aplicativo, desenvolvimento do game educativo e organização dos recursos necessários para a construção do protótipo físico.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">03</span>
+                <div>
+                  <h3>Construção, integração e testes</h3>
+                  <p>Desenvolvimento dos sistemas, programação dos dispositivos, montagem dos circuitos eletrônicos, construção dos óculos inteligentes e do robô, integração entre hardware e software e realização dos testes de funcionamento. Essa etapa também envolveu ajustes técnicos para garantir a comunicação entre os componentes e o funcionamento conjunto das soluções.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- 07 · Participação -->
+          <section class="pj-section" id="participacao">
+            <p class="section-eyebrow"><span class="num">07</span> <span class="line"></span></p>
+            <h2 class="pj-title">Minha participação</h2>
+            <p class="pj-text">Minha participação no Readapt envolveu diferentes áreas do desenvolvimento, desde a concepção visual até a implementação técnica das soluções digitais e físicas.</p>
+            <div class="learn-list">
+              <div class="learn-card">
+                <h3>Identidade visual e design</h3>
+                <p>Criei a identidade visual do projeto, as interfaces do site e o design do aplicativo.</p>
+              </div>
+              <div class="learn-card">
+                <h3>Desenvolvimento de software</h3>
+                <p>Programei o backend e a integração por API, responsável pela comunicação entre os sistemas.</p>
+              </div>
+              <div class="learn-card">
+                <h3>Desenvolvimento de hardware e robótica</h3>
+                <p>Desenvolvi o protótipo: o design do robô, os circuitos e a montagem dos óculos.</p>
+              </div>
+              <div class="learn-card">
+                <h3>Documentação e organização</h3>
+                <p>Elaborei a documentação técnica e organizei as etapas do projeto.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 08 · Aprendizados -->
+          <section class="pj-section" id="aprendizados">
+            <p class="section-eyebrow"><span class="num">08</span> <span class="line"></span></p>
+            <h2 class="pj-title">Principais aprendizados</h2>
+            <div class="learn-list">
+              <div class="learn-card">
+                <h3>Aprendizados técnicos</h3>
+                <p>O desenvolvimento do Readapt proporcionou conhecimentos práticos em diferentes áreas da Tecnologia da Informação, especialmente em programação, desenvolvimento de software, utilização de APIs, processamento de imagens, eletrônica e robótica.</p>
+                <p>A construção do protótipo também possibilitou o aprendizado sobre componentes eletrônicos, montagem de circuitos, programação de microcontroladores e integração entre hardware e software, ampliando a compreensão sobre o funcionamento de sistemas tecnológicos integrados.</p>
+              </div>
+              <div class="learn-card">
+                <h3>Desenvolvimento e organização</h3>
+                <p>Além dos conhecimentos técnicos, o projeto proporcionou uma experiência prática em pesquisa de mercado, planejamento financeiro, levantamento de custos, organização de recursos e gerenciamento das etapas de desenvolvimento.</p>
+                <p>O trabalho também evidenciou a importância da colaboração entre os integrantes, da divisão de responsabilidades e da integração de diferentes conhecimentos para transformar uma ideia em uma solução tecnológica concreta.</p>
+              </div>
+            </div>
+            <div class="closing">
+              <h3>Premiação</h3>
+              <p>Com o Readapt, conquistei o prêmio de <strong>Melhor TCC da turma</strong> e, também, o maior prêmio do curso: o de <strong>Melhor TCC do curso Técnico em Tecnologia da Informação</strong> do UNASP.</p>
+            </div>
+          </section>
+
+          <!-- 09 · Imagens -->
+          <section class="pj-section" id="imagens">
+            <p class="section-eyebrow"><span class="num">09</span> <span class="line"></span></p>
+            <h2 class="pj-title">Imagens e capturas de tela</h2>
+            <div class="shots">
+              <div class="shot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M21 16l-5-5-8 8"></path></svg>
+                <span>Imagem 1 — a adicionar</span>
+              </div>
+              <div class="shot">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M21 16l-5-5-8 8"></path></svg>
+                <span>Imagem 2 — a adicionar</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10 · Demonstração e repositório -->
+          <section class="pj-section" id="demonstracao">
+            <p class="section-eyebrow"><span class="num">10</span> <span class="line"></span></p>
+            <h2 class="pj-title">Demonstração e repositório</h2>
+            <div class="project-links">
+              <span class="btn btn-disabled" aria-disabled="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+                Ver demonstração <span class="status">indisponível</span>
+              </span>
+              <a href="https://github.com/erika-rodrigues/Readapt_tcc" class="btn btn-outline" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+                Repositório no GitHub
+              </a>
+            </div>
+          </section>
+
+          <!-- Navegação entre projetos -->
+          <div class="project-footer-nav">
+            <a href="projetos.html" class="btn btn-outline">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+              Voltar aos projetos
+            </a>
+            <a href="contato.html" class="btn btn-primary">
+              Conversar sobre este projeto
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Erika<span class="accent-dot">.</span></p>
+        <p class="footer-desc">Estudante de Tecnologia da Informação. Estudante de TI explorando software, interfaces e hardware.</p>
+        <div class="social-links">
+          <a href="https://github.com/erika-rodrigues" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/erika-rodriguess/" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg> LinkedIn</a>
+          <a href="mailto:roliveira.erika@gmail.com" class="social-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg> E-mail</a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Páginas do site">
+        <p class="footer-title"><span class="slash">//</span> Páginas</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="trajetoria.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 Erika. Todos os direitos reservados.</span>
+        <span>Do código ao circuito — em construção contínua.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
