@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="trajetoria.css">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}</script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         <span class="brand-path">/portfólio</span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegação principal">
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -31,7 +32,7 @@
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
@@ -67,7 +68,7 @@
       <div class="container">
 
         <div class="timeline-meta">
-          <span>3 etapas registradas · 4 espaços reservados</span>
+          <span>7 etapas registradas · 2 espaços reservados</span>
           <span class="legend">
             <span class="legend-item"><i class="dot dot-on"></i> registrado</span>
             <span class="legend-item"><i class="dot dot-off"></i> a preencher</span>
@@ -82,11 +83,11 @@
             <article class="tl-card">
               <header class="tl-head">
                 <span class="tl-kicker"><span class="tl-num">01</span> Formação escolar</span>
-                <span class="ph-pill">✎ Início — Término</span>
+                <span class="info-pill">2024 — 2026</span>
               </header>
               <h3 class="tl-title">Ensino médio</h3>
-              <span class="ph-pill ph-pill-block">✎ Instituição de ensino</span>
-              <p class="tl-desc">Formação escolar cursada de forma integrada ao curso técnico em TI.</p>
+              <span class="info-pill info-pill-block">UNASP · Centro Universitário Adventista de São Paulo</span>
+              <p class="tl-desc">Formação escolar integrada ao curso técnico.</p>
             </article>
           </li>
 
@@ -96,10 +97,10 @@
             <article class="tl-card">
               <header class="tl-head">
                 <span class="tl-kicker"><span class="tl-num">02</span> Curso técnico</span>
-                <span class="ph-pill">✎ Início — Término</span>
+                <span class="info-pill">2024 — 2026</span>
               </header>
               <h3 class="tl-title">Curso técnico integrado em Tecnologia da Informação</h3>
-              <span class="ph-pill ph-pill-block">✎ Instituição de ensino</span>
+              <span class="info-pill info-pill-block">UNASP · Centro Universitário Adventista de São Paulo</span>
               <p class="tl-desc">Contato com programação, banco de dados, design de interfaces e hardware ao longo do curso.</p>
               <ul class="tags tags-mono">
                 <li>Programação</li><li>Banco de dados</li><li>Interfaces</li><li>Hardware</li>
@@ -113,7 +114,7 @@
             <article class="tl-card">
               <header class="tl-head">
                 <span class="tl-kicker"><span class="tl-num">03</span> Projeto</span>
-                <span class="ph-pill">✎ Período</span>
+                <span class="info-pill">durante todo o ano de 2026</span>
               </header>
               <h3 class="tl-title">Readapt</h3>
               <p class="tl-sub">Projeto acadêmico</p>
@@ -124,63 +125,99 @@
             </article>
           </li>
 
-          <!-- 04 · Evento (direita) — espaço reservado -->
+          <!-- 04 · Evento (direita) -->
           <li class="tl-item tl-right">
-            <span class="tl-marker" aria-hidden="true"></span>
-            <article class="tl-card tl-card-empty">
+            <span class="tl-marker tl-on" aria-hidden="true"></span>
+            <article class="tl-card">
               <header class="tl-head">
-                <span class="tl-kicker"><span class="tl-num">04</span> Experiência acadêmica / evento</span>
-                <span class="ph-pill">✎ Data</span>
+                <span class="tl-kicker"><span class="tl-num">04</span> Evento</span>
+                <span class="info-pill">22/04/2026</span>
               </header>
-              <div class="ph-box ph-box-title">✎ Nome do evento, feira ou apresentação</div>
-              <span class="ph-pill ph-pill-block">✎ Local / organização</span>
-              <div class="ph-box">✎ A preencher quando houver: feiras, mostras, palestras ou eventos de tecnologia.</div>
+              <h3 class="tl-title">Criatividade e Inovação</h3>
+              <p class="tl-sub">World Criative Day</p>
+              <p class="tl-desc">Desenvolvendo iniciativas de empreendedorismo digital e inovação. Evento com 4 horas de duração.</p>
+              <a href="#" class="btn btn-primary btn-cert">Ver certificado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
             </article>
           </li>
 
-          <!-- 05 · Curso complementar (esquerda) — espaço reservado -->
+          <!-- 05 · Curso Python (esquerda) -->
           <li class="tl-item tl-left">
-            <span class="tl-marker" aria-hidden="true"></span>
-            <article class="tl-card tl-card-empty">
+            <span class="tl-marker tl-on" aria-hidden="true"></span>
+            <article class="tl-card">
               <header class="tl-head">
-                <span class="tl-kicker"><span class="tl-num">05</span> Curso complementar</span>
-                <span class="ph-pill">✎ Período</span>
+                <span class="tl-kicker"><span class="tl-num">05</span> Curso online</span>
+                <span class="info-pill">FIAP</span>
               </header>
-              <div class="ph-box ph-box-title">✎ Nome do curso complementar</div>
-              <span class="ph-pill ph-pill-block">✎ Instituição / plataforma</span>
-              <div class="ph-box">✎ A preencher quando houver.</div>
+              <h3 class="tl-title">Python</h3>
+              <p class="tl-sub">80 horas · 8 capítulos</p>
+              <p class="tl-desc">Curso introdutório de programação em Python, abordando instalação, variáveis, tipos de dados, estruturas condicionais, repetições, coleções e funções.</p>
+              <ul class="tags tags-mono"><li>Python</li></ul>
+              <a href="#" class="btn btn-primary btn-cert">Ver certificado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
             </article>
           </li>
 
-          <!-- 06 · Certificação (direita) — espaço reservado -->
+          <!-- 06 · Curso Jovens Líderes (direita) -->
+          <li class="tl-item tl-right">
+            <span class="tl-marker tl-on" aria-hidden="true"></span>
+            <article class="tl-card">
+              <header class="tl-head">
+                <span class="tl-kicker"><span class="tl-num">06</span> Curso online</span>
+                <span class="info-pill">FIAP</span>
+              </header>
+              <h3 class="tl-title">Jovens Líderes</h3>
+              <p class="tl-sub">40 horas · 6 capítulos</p>
+              <p class="tl-desc">Curso voltado ao desenvolvimento de habilidades de liderança, com foco em autoconhecimento, inteligência emocional, colaboração, adaptação, inteligência coletiva e Teoria U.</p>
+              <ul class="tags tags-mono"><li>Liderança</li><li>Inteligência emocional</li><li>Colaboração</li></ul>
+              <a href="#" class="btn btn-primary btn-cert">Ver certificado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            </article>
+          </li>
+
+          <!-- 07 · Curso Leadership Communication (esquerda) -->
+          <li class="tl-item tl-left">
+            <span class="tl-marker tl-on" aria-hidden="true"></span>
+            <article class="tl-card">
+              <header class="tl-head">
+                <span class="tl-kicker"><span class="tl-num">07</span> Curso online</span>
+                <span class="info-pill">FIAP</span>
+              </header>
+              <h3 class="tl-title">Comunicação de Liderança</h3>
+              <p class="tl-sub">40 horas · 4 capítulos</p>
+              <p class="tl-desc">Curso sobre comunicação eficaz no ambiente profissional, abordando comunicação humana, comunicação de liderança, técnicas de apresentação e storytelling.</p>
+              <ul class="tags tags-mono"><li>Comunicação</li><li>Oratória</li><li>Apresentações</li><li>Storytelling</li></ul>
+              <a href="#" class="btn btn-primary btn-cert">Ver certificado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            </article>
+          </li>
+
+          <!-- 08 · Certificação (direita) — em breve -->
           <li class="tl-item tl-right">
             <span class="tl-marker" aria-hidden="true"></span>
             <article class="tl-card tl-card-empty">
               <header class="tl-head">
-                <span class="tl-kicker"><span class="tl-num">06</span> Certificação</span>
+                <span class="tl-kicker"><span class="tl-num">08</span> Certificação</span>
                 <span class="ph-pill">✎ Data</span>
               </header>
               <div class="ph-box ph-box-title">✎ Nome da certificação</div>
               <span class="ph-pill ph-pill-block">✎ Emissor</span>
-              <div class="ph-box">✎ A preencher quando houver.</div>
+              <div class="ph-box">Em breve</div>
             </article>
           </li>
 
-          <!-- 07 · Experiência profissional (esquerda) — espaço reservado -->
+          <!-- 09 · Experiência profissional (esquerda) — em breve -->
           <li class="tl-item tl-left">
             <span class="tl-marker" aria-hidden="true"></span>
             <article class="tl-card tl-card-empty">
               <header class="tl-head">
-                <span class="tl-kicker"><span class="tl-num">07</span> Experiência profissional</span>
+                <span class="tl-kicker"><span class="tl-num">09</span> Experiência profissional</span>
                 <span class="ph-pill">✎ Período</span>
               </header>
               <div class="ph-box ph-box-title">✎ Cargo / estágio</div>
               <span class="ph-pill ph-pill-block">✎ Empresa</span>
-              <div class="ph-box">✎ A preencher quando houver.</div>
+              <div class="ph-box">Em breve</div>
             </article>
           </li>
 
         </ol>
+
       </div>
     </section>
 
@@ -224,7 +261,7 @@
               <span class="cv-line cv-line-accent"></span>
               <span class="cv-line w75"></span>
               <span class="cv-line w55"></span>
-              <small class="cv-doc-foot">atualização a definir</small>
+              <small class="cv-doc-foot">atualizado em 10/11/2026</small>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contato.css">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}</script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         <span class="brand-path">/portfólio</span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegação principal">
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -31,7 +32,7 @@
           <li><a href="contato.html" class="active" aria-current="page">Contato</a></li>
         </ul>
       </nav>
-
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
@@ -111,6 +112,9 @@
           </header>
 
           <form class="contact-form" id="contact-form" action="#" method="post">
+            <input type="hidden" name="_subject" value="Nova mensagem pelo portfólio">
+            <input type="hidden" name="_replyto" id="replyto" value="">
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             <div class="field">
               <label for="nome">Nome</label>
               <input type="text" id="nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required>
@@ -131,8 +135,8 @@
                 Enviar mensagem
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
               </button>
-              <span class="form-note">// envio a configurar</span>
-            </div>
+              <p class="form-note" id="form-note" aria-hidden="true"></p>
+                          </div>
           </form>
         </div>
 
