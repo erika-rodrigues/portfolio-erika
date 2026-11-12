@@ -425,3 +425,57 @@ h3 {
   color: var(--text);
 }
 
+/* ---------- 2. Menu lateral fixo ("Neste projeto") e layout do corpo ---------- */
+.project-body {
+  padding: 58px 0 34px;
+}
+
+.project-body-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.project-nav {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+.nav-title {
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.project-nav ol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.project-nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.project-nav a span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.project-nav a:hover {
+  color: var(--text);
+}
+
