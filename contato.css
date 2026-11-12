@@ -502,3 +502,70 @@ h3 {
 }
 
 
+/* ---------- 3. Canais de contato ---------- */
+.channels {
+  margin-top: 36px;
+  max-width: 520px;
+  border-top: 1px solid var(--line);
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.channel[aria-disabled="true"] {
+  cursor: default;
+}
+
+.channel-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.channel-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.channel-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.channel-text small {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.channel-text strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.channel-arrow {
+  font-size: 14px;
+  color: var(--muted-2);
+}
+
+
