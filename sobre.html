@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sobre.css">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}</script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
         <span class="brand-path">/portfólio</span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegação principal">
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html" class="active" aria-current="page">Sobre</a></li>
@@ -31,7 +32,7 @@
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <button class="theme-toggle" type="button" aria-label="Alternar modo claro e escuro">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
@@ -61,21 +62,14 @@
 
     <!-- 01 · TRAJETÓRIA -->
     <section class="section section-line">
-      <div class="container split">
+      <div class="container cheguei-grid">
         <div>
           <p class="section-eyebrow"><span class="num">01</span> <span class="line"></span> Minha trajetória</p>
           <h2 class="section-title section-title-sm">Como cheguei até aqui</h2>
+          <p class="body-text">Meu interesse pela tecnologia começou ainda na infância, principalmente por assistir aos filmes da Marvel e conhecer as invenções do Tony Stark. Sempre achei fascinante a maneira como ele utilizava a tecnologia para criar coisas incríveis, o que despertou minha curiosidade pela área. Ao longo do curso técnico, tive a oportunidade de conhecer diferentes áreas da Tecnologia da Informação, experimentar novas ferramentas e desenvolver projetos na prática. Sempre procurei me dedicar às atividades e aproveitar as oportunidades de aprendizado, o que contribuiu muito para meu desenvolvimento e para a evolução dos meus conhecimentos durante esses três anos.</p>
         </div>
 
-        <div class="split-text">
-          <p class="lead-text">
-            Minha formação em tecnologia acontece no curso técnico integrado em Tecnologia da Informação, que faço junto com
-            o ensino médio. Foi ali que passei a ter contato com programação, lógica e com as diferentes áreas que formam a TI.
-          </p>
-          <p class="placeholder">
-            <span class="ph-mark">✎</span> A preencher: conte como surgiu seu interesse pela tecnologia — um momento, uma pessoa ou um projeto que despertou sua curiosidade.
-          </p>
-        </div>
+        <figure class="cheguei-photo"><img src="images/tony-fundo.png" alt="Tony Stark em sua oficina"></figure>
       </div>
     </section>
 
@@ -90,18 +84,19 @@
             <article class="edu-card">
               <span class="edu-num">01</span>
               <h3>Ensino médio</h3>
-              <ul class="ph-tags">
-                <li>✎ Instituição de ensino</li>
-                <li>✎ Início — Término</li>
+              <ul class="edu-info">
+                <li>UNASP · Centro Universitário Adventista de São Paulo</li>
+                <li>2024 a 2026 · <span class="edu-done">concluído em 2026</span></li>
               </ul>
             </article>
 
             <article class="edu-card">
               <span class="edu-num">02</span>
               <h3>Curso técnico integrado em Tecnologia da Informação</h3>
-              <ul class="ph-tags">
-                <li>✎ Instituição de ensino</li>
-                <li>✎ Início — Término</li>
+              <ul class="edu-info">
+                <li>UNASP · Centro Universitário Adventista de São Paulo</li>
+                <li>Técnico em Tecnologia da Informação, integrado ao Ensino Médio</li>
+                <li>2024 a 2026 · <span class="edu-done">concluído em 2026</span></li>
               </ul>
             </article>
           </div>
@@ -117,9 +112,8 @@
             Foi também no ambiente acadêmico que participei do Readapt, uma proposta de tecnologia educacional que reúne
             software e hardware para apoiar crianças com dificuldades de leitura e escrita.
           </p>
-          <p class="placeholder">
-            <span class="ph-mark">✎</span> A preencher: disciplinas, professores ou desafios do curso técnico que mais marcaram você.
-          </p>
+          <p class="body-text">Durante o curso, tive contato com diferentes áreas da Tecnologia da Informação e desenvolvi projetos que me ajudaram a colocar em prática os conhecimentos adquiridos. Entre as disciplinas de que mais gostei estão PIDS (Projeto Integrado de Sistemas), principalmente por sua relação com o desenvolvimento do TCC, Robótica, Desenvolvimento de Jogos e Desenvolvimento de Sites.</p>
+            <p class="body-text">Também considero que todos os professores da área de TI tiveram importância na minha formação, pois cada um contribuiu de alguma maneira para meu aprendizado e desenvolvimento.</p>
         </div>
       </div>
     </section>
@@ -170,15 +164,15 @@
         <!-- Legenda de níveis -->
         <div class="levels">
           <div class="level-card">
-            <span class="level-badge"><i class="pips p1"></i>Básico</span>
+            <span class="level-badge"><span class="pips p1"><i></i><i></i><i></i></span>Básico</span>
             <p>Conheço os fundamentos e já pratiquei.</p>
           </div>
           <div class="level-card">
-            <span class="level-badge"><i class="pips p2"></i>Intermediário</span>
+            <span class="level-badge"><span class="pips p2"><i></i><i></i><i></i></span>Intermediário</span>
             <p>Uso com mais autonomia em exercícios e trabalhos.</p>
           </div>
           <div class="level-card">
-            <span class="level-badge"><i class="pips p3"></i>Em projetos</span>
+            <span class="level-badge"><span class="pips p3"><i></i><i></i><i></i></span>Em projetos</span>
             <p>Já utilizei na construção de um projeto.</p>
           </div>
         </div>
@@ -189,9 +183,9 @@
             <p class="skill-label">Desenvolvimento front-end</p>
             <p class="skill-desc">A camada que as pessoas veem e usam.</p>
             <ul class="skill-items">
-              <li><span>HTML</span><em class="level-tag">nível a definir</em></li>
-              <li><span>CSS</span><em class="level-tag">nível a definir</em></li>
-              <li><span>JavaScript</span><em class="level-tag">nível a definir</em></li>
+              <li><span>HTML</span><em class="level-tag"><span class="pips p2"><i></i><i></i><i></i></span></em></li>
+              <li><span>CSS</span><em class="level-tag"><span class="pips p2"><i></i><i></i><i></i></span></em></li>
+              <li><span>JavaScript</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
 
@@ -200,9 +194,9 @@
             <p class="skill-label">Desenvolvimento back-end</p>
             <p class="skill-desc">Lógica, regras e o que roda por trás.</p>
             <ul class="skill-items">
-              <li><span>Node.js</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Python</span><em class="level-tag">nível a definir</em></li>
-              <li><span>C</span><em class="level-tag">nível a definir</em></li>
+              <li><span>Node.js</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
+              <li><span>Python</span><em class="level-tag"><span class="pips p3"><i></i><i></i><i></i></span></em></li>
+              <li><span>C</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
 
@@ -211,8 +205,8 @@
             <p class="skill-label">Banco de dados</p>
             <p class="skill-desc">Onde a informação fica guardada.</p>
             <ul class="skill-items">
-              <li><span>MySQL</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Firebase</span><em class="level-tag">nível a definir</em></li>
+              <li><span>MySQL</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
+              <li><span>Firebase</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
 
@@ -221,14 +215,14 @@
             <p class="skill-label">Hardware e sistemas embarcados</p>
             <p class="skill-desc">Microcontroladores, placas e protótipos físicos.</p>
             <ul class="skill-items skill-items-2col">
-              <li><span>Arduino</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Arduino IDE</span><em class="level-tag">nível a definir</em></li>
+              <li><span>Arduino</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
+              <li><span>Arduino IDE</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
               <li>
-                <span>ESP32</span><em class="level-tag">nível a definir</em>
+                <span>ESP32</span><em class="level-tag"><span class="pips p3"><i></i><i></i><i></i></span></em>
                 <small class="used-in">↳ usado no Readapt</small>
               </li>
               <li>
-                <span>ESP32-CAM</span><em class="level-tag">nível a definir</em>
+                <span>ESP32-CAM</span><em class="level-tag"><span class="pips p3"><i></i><i></i><i></i></span></em>
                 <small class="used-in">↳ usado no Readapt</small>
               </li>
             </ul>
@@ -239,8 +233,8 @@
             <p class="skill-label">Design e interfaces</p>
             <p class="skill-desc">Planejar telas antes de construir.</p>
             <ul class="skill-items">
-              <li><span>Figma</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Canva</span><em class="level-tag">nível a definir</em></li>
+              <li><span>Figma</span><em class="level-tag"><span class="pips p3"><i></i><i></i><i></i></span></em></li>
+              <li><span>Canva</span><em class="level-tag"><span class="pips p2"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
 
@@ -249,9 +243,9 @@
             <p class="skill-label">Ferramentas de desenvolvimento</p>
             <p class="skill-desc">O ambiente de trabalho do dia a dia.</p>
             <ul class="skill-items skill-items-2col">
-              <li><span>Visual Studio Code</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Git</span><em class="level-tag">nível a definir</em></li>
-              <li><span>GitHub</span><em class="level-tag">nível a definir</em></li>
+              <li><span>Visual Studio Code</span><em class="level-tag"><span class="pips p2"><i></i><i></i><i></i></span></em></li>
+              <li><span>Git</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
+              <li><span>GitHub</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
 
@@ -260,8 +254,8 @@
             <p class="skill-label">Produtividade</p>
             <p class="skill-desc">Documentos, planilhas e organização.</p>
             <ul class="skill-items">
-              <li><span>Microsoft Word</span><em class="level-tag">nível a definir</em></li>
-              <li><span>Microsoft Excel</span><em class="level-tag">nível a definir</em></li>
+              <li><span>Microsoft Word</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
+              <li><span>Microsoft Excel</span><em class="level-tag"><span class="pips p1"><i></i><i></i><i></i></span></em></li>
             </ul>
           </article>
         </div>
@@ -274,24 +268,25 @@
         <div>
           <p class="section-eyebrow"><span class="num">05</span> <span class="line"></span> Próximos passos</p>
           <h2 class="section-title section-title-sm">Para onde quero ir</h2>
+            <div class="targets-left">
+        <div class="mini-card mini-card-bradesco">
+          <h3>Bradesco</h3>
+          <p>Conquistar uma oportunidade como estagiária ou funcionária em uma área de Tecnologia da Informação.</p>
+        </div>
+        <div class="mini-card mini-card-fiap">
+          <h3>FIAP</h3>
+          <p>Cursar uma graduação para aprofundar meus conhecimentos e me preparar para o mercado de trabalho.</p>
+        </div>
+          </div>
         </div>
 
         <div class="split-text">
-          <p class="lead-text">
-            Quero continuar aprendendo e explorando a tecnologia sem me prender cedo demais a uma única especialidade.
-            Cada área que conheço — do desenvolvimento ao hardware — ajuda a entender melhor as outras.
-          </p>
-          <p class="placeholder">
-            <span class="ph-mark">✎</span> A preencher: o tipo de estágio, curso ou atuação que você busca nos próximos passos.
-          </p>
-
-          <div class="hero-actions">
-            <a href="trajetoria.html" class="btn btn-dark">
-              Ver trajetória
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
-            </a>
-            <a href="contato.html" class="btn btn-outline">Fale comigo</a>
-          </div>
+          <p class="lead-text">Meu principal objetivo é conquistar uma oportunidade no Bradesco, seja como estagiária ou funcionária, em alguma área relacionada à Tecnologia da Informação. Tenho interesse em seguir caminhos como Gerência de Projetos de TI, Engenharia de Software e Engenharia de Inteligência Artificial.</p>
+            <ol class="top-jobs">
+              <li><span>01</span><h3>Gerência de Projetos de TI</h3></li>
+              <li><span>02</span><h3>Engenharia de Software</h3></li>
+              <li><span>03</span><h3>Engenharia de Inteligência Artificial</h3></li>
+            </ol>
         </div>
       </div>
     </section>
@@ -305,9 +300,9 @@
         <p class="footer-brand">Erika<span class="accent-dot">.</span></p>
         <p class="footer-desc">Estudante de Tecnologia da Informação. Estudante de TI explorando software, interfaces e hardware.</p>
         <div class="social-links">
-          <a href="#" class="social-pill" aria-disabled="true">GitHub <span class="status">a configurar</span></a>
-          <a href="#" class="social-pill" aria-disabled="true">LinkedIn <span class="status">a configurar</span></a>
-          <a href="#" class="social-pill" aria-disabled="true">E-mail <span class="status">a configurar</span></a>
+          <a href="https://github.com/erika-rodrigues" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.4 5.8 2.7 5.8 2.7a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/erika-rodriguess/" class="social-pill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM10 9h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V20h-3v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-3z"></path></svg> LinkedIn</a>
+          <a href="mailto:roliveira.erika@gmail.com" class="social-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg> E-mail</a>
         </div>
       </div>
 

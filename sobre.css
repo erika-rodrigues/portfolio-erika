@@ -316,14 +316,14 @@ h4 {
 
 .page-title {
   margin: 28px 0 24px;
-  font-size: clamp(64px, 8vw, 104px);
-  line-height: 0.98;
+  font-size: clamp(38px, 8vw, 62px);
+  line-height: 0.96;
   letter-spacing: -0.045em;
 }
 
 .page-lead {
   max-width: 640px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -374,9 +374,9 @@ h4 {
 }
 
 .section-title {
-  font-size: clamp(44px, 5vw, 64px);
+  font-size: clamp(38px, 8vw, 62px);
   letter-spacing: -0.035em;
-  line-height: 1.02;
+  line-height: 0.96;
 }
 
 .section-title-sm {
@@ -386,7 +386,7 @@ h4 {
 .section-lead {
   margin-top: 20px;
   max-width: 520px;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -404,13 +404,13 @@ h4 {
 }
 
 .lead-text {
-  font-size: 26px;
+  font-size: 21px;
   line-height: 1.5;
   color: var(--text);
 }
 
 .body-text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--muted);
 }
@@ -450,6 +450,11 @@ h4 {
   gap: 8px;
 }
 
+/* Formação: a base dos cards fica alinhada com a última linha do texto ao lado */
+.section-alt .split {
+  align-items: end;
+}
+
 .edu-list {
   display: flex;
   flex-direction: column;
@@ -459,7 +464,7 @@ h4 {
 
 .edu-card {
   position: relative;
-  padding: 26px 28px;
+  padding: 21px 22px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--surface);
@@ -506,7 +511,7 @@ h4 {
 }
 
 .area-desc {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -528,7 +533,7 @@ h4 {
 }
 
 .level-card {
-  padding: 20px 22px;
+  padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
@@ -581,7 +586,7 @@ h4 {
 
 .skill-card {
   position: relative;
-  padding: 28px;
+  padding: 22px;
   border: 1px solid var(--line);
   border-radius: 24px;
   background: var(--surface);
@@ -610,7 +615,7 @@ h4 {
 
 .skill-desc {
   margin-top: 8px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -718,7 +723,8 @@ h4 {
 }
 
 .targets-left .mini-card {
-  min-height: 150px;
+  min-height: 0;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -733,14 +739,19 @@ h4 {
   aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   min-height: 0;
+}
+
+/* Número no topo e profissão no meio do quadradinho */
+.top-jobs li h3 {
+  margin: auto 0;
 }
 
 
 .targets-row .mini-card,
 .targets-row .top-jobs li {
-  min-height: 240px;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -816,7 +827,7 @@ h4 {
 }
 
 .mini-card {
-  padding: 22px 24px;
+  padding: 18px 19px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--surface);
@@ -846,16 +857,51 @@ h4 {
   color: #fff;
 }
 
-.mini-card-bradesco {
-  background-image:
-    linear-gradient(rgba(15, 31, 63, 0.7), rgba(15, 31, 63, 0.7)),
-    url("images/bradesco-card.png");
+/* Foto de fundo em camada própria: no hover ela aumenta de forma suave */
+.mini-card-bradesco,
+.mini-card-fiap {
+  position: relative;
+  overflow: hidden;
+  background: none;
 }
 
-.mini-card-fiap {
-  background-image:
-    linear-gradient(rgba(15, 31, 63, 0.7), rgba(15, 31, 63, 0.7)),
-    url("images/fiap-card.png");
+.mini-card-bradesco::before,
+.mini-card-fiap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.mini-card-bradesco::before {
+  background-image: url("images/bradesco-card.png");
+}
+
+.mini-card-fiap::before {
+  background-image: url("images/fiap-card.png");
+}
+
+.mini-card-bradesco::after,
+.mini-card-fiap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 31, 63, 0.7);
+  z-index: 0;
+}
+
+.mini-card-bradesco > *,
+.mini-card-fiap > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mini-card-bradesco:hover::before,
+.mini-card-fiap:hover::before {
+  transform: scale(1.08);
 }
 
 /* Rótulo branco arredondado e textos brancos */
@@ -879,7 +925,7 @@ h4 {
 }
 
 .mini-card p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -895,7 +941,7 @@ h4 {
 }
 
 .top-jobs li {
-  padding: 22px 22px 24px;
+  padding: 18px 18px 19px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--surface);
@@ -946,7 +992,7 @@ h4 {
 }
 
 .edu-info li {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1106,7 +1152,7 @@ h4 {
 .footer-desc {
   max-width: 420px;
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -1174,4 +1220,182 @@ h4 {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--muted-2);
+}
+
+
+/* ---------- 13. Versão para celular (até 768px) ---------- */
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  .site-nav ul { flex-wrap: wrap; gap: 8px 16px !important; }
+  .hero-grid, .split, .cheguei-grid, .project-hero-grid, .project-body-grid, .contact-grid, .about-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .hero-visual, .cover-photo, .project-visual, .cv-preview { max-width: 100%; }
+  .container { padding: 0 18px; }
+
+  .header-inner { height: auto; flex-wrap: wrap; padding: 14px 0; gap: 12px; }
+  .site-nav { order: 3; width: 100%; margin: 0; }
+  .site-nav ul { justify-content: center; gap: 18px; }
+  .site-nav a { font-size: 14px; }
+  .page-hero { padding: 48px 0 40px; }
+  .page-hero-num { display: none; }
+  .page-title { font-size: 40px; }
+  .page-lead { font-size: 16px; }
+
+  .section, .section-alt { padding: 56px 0; }
+  .section-title, .section-title-sm { font-size: 36px; }
+  .split { grid-template-columns: 1fr; gap: 32px; }
+  .cheguei-grid { grid-template-columns: 1fr; gap: 32px; }
+  .cheguei-photo { min-height: 260px; }
+  .lead-text { font-size: 18px; }
+
+  .area-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .area-name { font-size: 36px; }
+  .area-stack { text-align: left; }
+
+  .levels { grid-template-columns: 1fr; gap: 12px; margin: 32px 0; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skills-grid .skill-card:nth-child(4),
+  .skills-grid .skill-card:nth-child(6) { grid-column: auto; }
+  .skill-items-2col { grid-template-columns: 1fr; }
+
+  .edu-list { margin-top: 32px; }
+  .targets-row { grid-template-columns: 1fr; }
+  .targets-left { margin-top: 24px; }
+  .top-jobs { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .top-jobs h3 { font-size: 15px; }
+  .mini-card h3 { font-size: 18px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-nav ul { grid-template-columns: 1fr 1fr; }
+  .footer-bottom-inner { flex-direction: column; text-align: center; }
+}
+
+
+/* ---------- 14. Celular: refinamento (até 768px) ---------- */
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .skills-grid .skill-card:nth-child(4),
+  .skills-grid .skill-card:nth-child(6) { grid-column: 1 / -1; }
+  .skill-card { padding: 18px 16px; }
+  .skill-label { font-size: 10px; letter-spacing: 0.1em; }
+  .skill-desc { font-size: 13px; }
+  .skill-items li span { font-size: 15px; }
+  .level-tag { font-size: 10px; }
+
+  .targets-left { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .targets-left .mini-card { padding: 14px 14px; }
+  .targets-left .mini-card p { font-size: 12px; }
+  .top-jobs li { padding: 12px 10px; }
+  .top-jobs h3 { font-size: 13px; }
+  .top-jobs span { font-size: 11px; }
+}
+
+
+/* ---------- 15. Celular: menu, rodapé e espaçamentos ---------- */
+.menu-toggle { display: none; }
+
+@media (max-width: 768px) {
+  .container { padding-left: 20px; padding-right: 20px; }
+  .menu-toggle { display: grid; place-items: center; order: 2; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
+  .menu-toggle span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--text); margin: 2px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .menu-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .header-inner { flex-wrap: wrap; }
+  .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .site-nav { display: none; }
+  .site-nav.is-open { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--bg); padding: 96px 20px 40px; overflow-y: auto; }
+  .site-nav ul { display: block; counter-reset: nav; }
+  .site-nav ul::before { content: "// Navegação"; display: block; margin-bottom: 18px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+  .site-nav li { counter-increment: nav; position: relative; border-bottom: 1px solid var(--line); }
+  .site-nav li::after { content: "0" counter(nav); position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 12px; color: var(--blue); }
+  .site-nav a { display: block; padding: 16px 40px 16px 0; font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--muted-2); }
+  .site-nav a.active { color: var(--text); }
+  .site-nav a.active::after { display: none; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .social-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .social-pill { width: fit-content; }
+  .footer-nav ul { grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+  .footer-bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 20px; }
+}
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 14px; }
+  .skills-grid .skill-card:nth-child(4), .skills-grid .skill-card:nth-child(6) { grid-column: auto; }
+  .skill-num { position: static; display: block; margin-bottom: 6px; font-size: 22px; }
+}
+@media (max-width: 768px) {
+  .skill-num { position: absolute; top: 16px; right: 18px; display: inline; margin: 0; font-size: 22px; color: var(--blue); -webkit-text-stroke: 0; }
+  .skill-label { padding-right: 56px; }
+}
+@media (max-width: 768px) {
+  .targets-left { display: flex; flex-direction: column; gap: 12px; }
+  .targets-left .mini-card { width: 100%; }
+  .skill-dark .skill-num { font-size: 22px; }
+  .theme-toggle { order: 1; margin-left: auto; }
+  .menu-toggle { order: 2; margin-left: 8px; }
+}
+@media (max-width: 768px) {
+  .site-footer { padding-bottom: 56px; }
+  .footer-grid { padding-bottom: 8px; }
+}
+@media (max-width: 768px) {
+  .footer-grid .social-links { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .footer-nav, .footer-bottom { display: none; }
+}
+
+/* Ícone do menu: três linhas finas, centralizadas no botão */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+  .menu-toggle span { width: 18px; height: 1.5px; margin: 0; }
+}
+
+/* ---------- Celular: "Para onde quero ir" com mais respiro ---------- */
+@media (max-width: 768px) {
+  .split:has(.targets-left) { gap: 40px; }
+  .split:has(.targets-left) > div:first-child .section-title { margin-bottom: 0; }
+
+  .targets-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .targets-left .mini-card {
+    width: 100%;
+    padding: 24px 22px;
+  }
+  .targets-left .mini-card h3 { font-size: 20px; margin-bottom: 10px; }
+  .targets-left .mini-card p { font-size: 14px; line-height: 1.6; }
+
+  .split:has(.targets-left) .split-text .lead-text {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .top-jobs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .top-jobs li { padding: 18px 14px; }
+  .top-jobs h3 { font-size: 14px; line-height: 1.3; }
+  .top-jobs span { font-size: 12px; }
+}
+
+/* Celular: mais espaço entre o texto principal e as três profissões */
+@media (max-width: 768px) {
+  .top-jobs { margin-top: 56px; }
+}
+
+/* Celular: os três títulos de profissão em no máximo 3 linhas */
+@media (max-width: 768px) {
+  .top-jobs { gap: 8px; }
+  .top-jobs li { padding: 16px 10px; }
+  .top-jobs h3 { font-size: 13px; line-height: 1.3; }
+}
+
+/* Celular: mais distância entre o texto principal e as três profissões */
+@media (max-width: 768px) {
+  .split:has(.targets-left) .split-text .top-jobs { margin-top: 20px; }
 }
