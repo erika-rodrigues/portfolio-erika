@@ -1,0 +1,333 @@
+/* =========================================================
+   CONTATO (contato.html)
+   ---------------------------------------------------------
+   Índice de tópicos:
+   1. Variáveis de cor, base, cabeçalho e título
+   2. Formulário
+   3. Canais de contato
+   4. Rodapé
+   ========================================================= */
+
+
+/* ---------- 1. Variáveis de cor, base, cabeçalho e título ---------- */
+:root {
+  --bg: #f4f6fa;
+  --bg-tint: #eef2f9;
+  --surface: #ffffff;
+  --surface-2: #eaeef6;
+  --text: #131a2a;
+  --muted: #5b6578;
+  --muted-2: #8a93a6;
+  --line: #dfe4ee;
+  --grid: rgba(37, 99, 235, 0.06);
+  --blue: #2563eb;
+  --blue-light: #7aa2ff;
+  --blue-soft: #eaf1ff;
+  --navy: #0f1f3f;
+  --navy-2: #13294f;
+  --navy-line: rgba(122, 162, 255, 0.18);
+  --shadow: 0 24px 60px -28px rgba(15, 31, 63, 0.28);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1322;
+    --bg-tint: #0e1830;
+    --surface: #121c31;
+    --surface-2: #1a2640;
+    --text: #eef2fa;
+    --muted: #9aa5ba;
+    --muted-2: #6f7b93;
+    --line: #263252;
+    --grid: rgba(122, 162, 255, 0.06);
+    --blue: #5b8cff;
+    --blue-light: #8fb0ff;
+    --blue-soft: #17264a;
+    --navy: #1f3a72;
+    --navy-2: #1a3263;
+    --navy-line: rgba(143, 176, 255, 0.2);
+    --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1322;
+  --bg-tint: #0e1830;
+  --surface: #121c31;
+  --surface-2: #1a2640;
+  --text: #eef2fa;
+  --muted: #9aa5ba;
+  --muted-2: #6f7b93;
+  --line: #263252;
+  --grid: rgba(122, 162, 255, 0.06);
+  --blue: #5b8cff;
+  --blue-light: #8fb0ff;
+  --blue-soft: #17264a;
+  --navy: #1f3a72;
+  --navy-2: #1a3263;
+  --navy-line: rgba(143, 176, 255, 0.2);
+  --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.accent,
+.accent-dot {
+  color: var(--blue);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* Cabeçalho */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 2px solid var(--bg);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.brand-path {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.site-nav {
+  margin-left: auto;
+  margin-right: 36px;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 36px;
+}
+
+.site-nav a {
+  position: relative;
+  color: var(--muted);
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--text);
+}
+
+.site-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateX(-50%);
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Título da página */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+
+.contact-hero {
+  position: relative;
+  padding: 54px 0 72px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.contact-ring {
+  position: absolute;
+  left: -160px;
+  top: 40px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid var(--navy-line);
+  pointer-events: none;
+}
+
+.contact-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.contact-title {
+  white-space: nowrap;
+  margin: 28px 0 24px;
+  font-size: clamp(38px, 8vw, 62px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.contact-lead {
+  max-width: 500px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+
