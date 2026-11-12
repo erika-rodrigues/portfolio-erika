@@ -1,0 +1,427 @@
+/* =========================================================
+   READAPT (readapt.html) — página de projeto
+   ---------------------------------------------------------
+   Índice de tópicos:
+   1. Variáveis de cor, base, cabeçalho e apresentação
+   2. Menu lateral fixo ("Neste projeto") e layout do corpo
+   3. Seções e títulos
+   4. Cards "Como funciona"
+   5. Tecnologias e processo de desenvolvimento
+   6. Participação e principais aprendizados
+   7. Imagens e demonstração
+   8. Navegação final e rodapé
+   ========================================================= */
+/* ---------- 1. Variáveis de cor, base, cabeçalho e apresentação ---------- */
+:root {
+  --bg: #f4f6fa;
+  --bg-tint: #eef2f9;
+  --surface: #ffffff;
+  --surface-2: #eaeef6;
+  --text: #131a2a;
+  --muted: #5b6578;
+  --muted-2: #8a93a6;
+  --line: #dfe4ee;
+  --grid: rgba(37, 99, 235, 0.06);
+  --blue: #2563eb;
+  --blue-light: #7aa2ff;
+  --blue-soft: #eaf1ff;
+  --navy: #0f1f3f;
+  --navy-2: #13294f;
+  --shadow: 0 24px 60px -28px rgba(15, 31, 63, 0.28);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@media (prefers-color-scheme: dark) {:root:not([data-theme="light"]) {
+    --bg: #0b1322;
+    --bg-tint: #0e1830;
+    --surface: #121c31;
+    --surface-2: #1a2640;
+    --text: #eef2fa;
+    --muted: #9aa5ba;
+    --muted-2: #6f7b93;
+    --line: #263252;
+    --grid: rgba(122, 162, 255, 0.06);
+    --blue: #5b8cff;
+    --blue-light: #8fb0ff;
+    --blue-soft: #17264a;
+    --navy: #1f3a72;
+    --navy-2: #1a3263;
+    --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1322;
+  --bg-tint: #0e1830;
+  --surface: #121c31;
+  --surface-2: #1a2640;
+  --text: #eef2fa;
+  --muted: #9aa5ba;
+  --muted-2: #6f7b93;
+  --line: #263252;
+  --grid: rgba(122, 162, 255, 0.06);
+  --blue: #5b8cff;
+  --blue-light: #8fb0ff;
+  --blue-soft: #17264a;
+  --navy: #1f3a72;
+  --navy-2: #1a3263;
+  --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.accent,
+.accent-dot {
+  color: var(--blue);
+}
+
+.placeholder {
+  padding: 12px 14px;
+  border: 1px dashed var(--blue-light);
+  border-radius: 12px;
+  background: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* Cabeçalho */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 2px solid var(--bg);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.brand-path {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.site-nav {
+  margin-left: auto;
+  margin-right: 36px;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 36px;
+}
+
+.site-nav a {
+  position: relative;
+  color: var(--muted);
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--text);
+}
+
+.site-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateX(-50%);
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Apresentação */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+
+/* Bloco de topo (apresentação + foto): um único fundo quadriculado.
+   background-repeat: round ajusta os quadrados para que o último não fique cortado. */
+.project-top {
+  border-bottom: 1px solid var(--line);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-repeat: round;
+}
+
+.project-hero {
+  padding: 42px 0 48px;
+}
+
+.project-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.back-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--blue);
+}
+
+.back-link svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.project-title {
+  margin: 24px 0 28px;
+  font-size: clamp(38px, 8vw, 62px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.project-lead {
+  max-width: 620px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Foto de destaque logo abaixo da apresentação */
+.project-cover {
+  padding: 0 0 54px;
+}
+
+.cover-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 21 / 9;
+  border: 1px dashed var(--blue-light);
+  border-radius: 28px;
+  background: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Cartão de informações */
+.project-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.meta-cell:nth-child(2n) {
+  border-right: 0;
+}
+
+.meta-cell-wide {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.meta-cell:nth-last-child(1),
+.meta-cell:nth-last-child(2):nth-child(odd) {
+  border-bottom: 0;
+}
+
+.meta-cell:nth-child(4) {
+  border-bottom: 1px solid var(--line);
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.meta-value {
+  font-size: 15px;
+  color: var(--text);
+}
+
