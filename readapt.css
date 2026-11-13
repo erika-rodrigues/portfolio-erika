@@ -703,3 +703,109 @@ h3 {
   color: var(--muted);
 }
 
+/* ---------- 6. Participação e principais aprendizados ---------- */
+.learn-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.learn-card {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.learn-card h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.learn-card p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Participação: cards com número grande contornado.
+   Os cards 1 e 4 (diagonal) são azuis e os cards 2 e 3 são brancos com filete azul. */
+#participacao .learn-list {
+  counter-reset: card;
+}
+
+#participacao .learn-card {
+  counter-increment: card;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  padding: 36px 38px;
+}
+
+/* Texto ocupa só a parte de cima, deixando o número livre */
+#participacao .learn-card h3,
+#participacao .learn-card p {
+  max-width: 70%;
+}
+
+#participacao .learn-card::after {
+  content: "0" counter(card);
+  position: absolute;
+  right: 26px;
+  bottom: 14px;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+}
+
+#participacao .learn-card:nth-child(1),
+#participacao .learn-card:nth-child(4) {
+  background: var(--blue);
+  border-color: var(--blue);
+  border-top-color: var(--blue);
+  color: #fff;
+  box-shadow: 0 30px 60px -30px var(--blue);
+}
+
+#participacao .learn-card:nth-child(1)::after,
+#participacao .learn-card:nth-child(4)::after {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
+}
+
+#participacao .learn-card:nth-child(1) h3,
+#participacao .learn-card:nth-child(4) h3 {
+  color: #fff;
+}
+
+#participacao .learn-card:nth-child(1) p,
+#participacao .learn-card:nth-child(4) p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.closing {
+  margin-top: 30px;
+  padding: 26px 29px;
+  border-left: 3px solid var(--blue);
+  background: var(--bg-tint);
+  border-radius: 0 16px 16px 0;
+}
+
+.closing h3 {
+  margin-bottom: 14px;
+  font-size: 19px;
+}
+
+.closing p {
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
