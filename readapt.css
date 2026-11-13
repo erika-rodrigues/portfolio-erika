@@ -479,3 +479,82 @@ h3 {
   color: var(--text);
 }
 
+/* ---------- 3. Seções e títulos ---------- */
+.pj-section {
+  padding-bottom: 72px;
+  scroll-margin-top: 83px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-eyebrow .num {
+  display: inline-grid;
+  place-items: center;
+  padding: 2px 8px;
+  border: 1px solid var(--blue-light);
+  border-radius: 6px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  letter-spacing: 0;
+}
+
+.section-eyebrow .line {
+  width: 36px;
+  height: 1px;
+  background: var(--line);
+}
+
+.pj-title {
+  margin-bottom: 20px;
+  font-size: clamp(25px, 4vw, 32px);
+  letter-spacing: -0.035em;
+}
+
+.pj-text {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.pj-section .placeholder {
+  margin-top: 16px;
+}
+
+/* Princípio do projeto */
+.principle {
+  position: relative;
+  margin: 0 0 43px;
+  padding: 26px 29px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #13295a 0%, #0f1f3f 60%, #0b1830 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.principle-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.principle-text {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.35;
+  color: #fff;
+}
+
