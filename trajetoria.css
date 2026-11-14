@@ -10,8 +10,6 @@
    6. Bloco de currículo
    7. Chamada final e rodapé
    ========================================================= */
-
-
 /* ---------- 1. Variáveis de cor, base, cabeçalho e hero ---------- */
 :root {
   --bg: #f4f6fa;
@@ -34,8 +32,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+@media (prefers-color-scheme: dark) {:root:not([data-theme="light"]) {
     --bg: #0b1322;
     --bg-tint: #0e1830;
     --surface: #121c31;
@@ -346,7 +343,6 @@ h4 {
   stroke-linejoin: round;
 }
 
-
 /* ---------- 2. Linha do tempo (estrutura e itens 01 e 02) ---------- */
 .section-tight {
   padding: 56px 0;
@@ -546,32 +542,6 @@ h4 {
 }
 
 /* Lista de cursos dentro do card */
-.tl-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.tl-list li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.tl-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: var(--blue);
-}
-
 
 /* ---------- 3. Linha do tempo: item 03 (projeto) ---------- */
 .tl-sub {
@@ -605,7 +575,6 @@ h4 {
   margin-top: 10px;
 }
 
-
 /* ---------- 5. Espaços reservados 06 e 07 ---------- */
 .ph-box-title {
   margin-bottom: 10px;
@@ -614,7 +583,6 @@ h4 {
   font-weight: 600;
   color: var(--muted);
 }
-
 
 /* ---------- 6. Bloco de currículo ---------- */
 .split {
@@ -715,13 +683,6 @@ h4 {
   color: #fff;
 }
 
-.ph-note {
-  margin-top: 16px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--blue);
-}
-
 .cv-preview {
   position: relative;
   height: 380px;
@@ -782,12 +743,19 @@ h4 {
 }
 
 .cv-line.w90 { width: 90%; }
+
 .cv-line.w85 { width: 85%; }
+
 .cv-line.w80 { width: 80%; }
+
 .cv-line.w75 { width: 75%; }
+
 .cv-line.w70 { width: 70%; }
+
 .cv-line.w60 { width: 60%; }
+
 .cv-line.w55 { width: 55%; }
+
 .cv-line.w50 { width: 50%; }
 
 .cv-line-accent {
@@ -803,7 +771,6 @@ h4 {
   font-size: 11px;
   color: #8a93a6;
 }
-
 
 /* ---------- 7. Chamada final e rodapé ---------- */
 .cta-wrap {
@@ -993,4 +960,384 @@ h4 {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--muted-2);
+}
+
+@media (max-width: 768px) {body { overflow-x: hidden; }
+
+.site-nav ul { flex-wrap: wrap; gap: 8px 16px !important; }
+
+.hero-grid,
+.split,
+.cheguei-grid,
+.project-hero-grid,
+.project-body-grid,
+.contact-grid,
+.about-grid { grid-template-columns: minmax(0, 1fr) !important; }
+
+.hero-visual,
+.cover-photo,
+.project-visual,
+.cv-preview { max-width: 100%; }
+
+.container { padding: 0 18px; }
+
+.header-inner { height: auto; flex-wrap: wrap; padding: 14px 0; gap: 12px; }
+
+.site-nav { order: 3; width: 100%; margin: 0; }
+
+.site-nav ul { justify-content: center; gap: 18px; }
+
+.site-nav a { font-size: 14px; }
+
+.page-hero { padding: 48px 0 40px; }
+
+.page-hero-num { display: none; }
+
+.page-title { font-size: 40px; }
+
+.page-lead { font-size: 16px; }
+
+.section-tight { padding: 32px 0; }
+
+.timeline-meta { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 24px; }
+
+.timeline { padding: 8px 0 16px; }
+
+.timeline::before { left: 16px; }
+
+.tl-item,
+.tl-left,
+.tl-right { width: 100%; margin-left: 0; padding: 0 0 0 44px; margin-bottom: 28px; }
+
+.tl-left .tl-marker,
+.tl-right .tl-marker { left: 9px; right: auto; top: 26px; }
+
+.tl-card { padding: 20px 20px; }
+
+.tl-title { font-size: 22px; }
+
+.tl-head { flex-wrap: wrap; }
+
+.cv-card { grid-template-columns: 1fr; padding: 28px 22px; gap: 24px; }
+
+.cv-title { font-size: 40px; }
+
+.cv-preview { height: 280px; }
+
+.cv-doc { width: 220px; height: 290px; }
+
+.cv-actions .btn { width: 100%; justify-content: center; }
+
+.cta { padding: 48px 24px; border-radius: 20px; }
+
+.cta-title { font-size: 40px; white-space: normal; }
+
+.cta-ring,
+.cta-ring-2,
+.cta-diamond { display: none; }
+
+.footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+.footer-nav ul { grid-template-columns: 1fr 1fr; }
+
+.footer-bottom-inner { flex-direction: column; text-align: center; }
+}
+
+/* ---------- 15. Celular: menu, rodapé e espaçamentos ---------- */
+.menu-toggle { display: none; }
+
+@media (max-width: 768px) {.container { padding-left: 20px; padding-right: 20px; }
+
+.menu-toggle { display: grid; place-items: center; order: 2; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
+
+.menu-toggle span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--text); margin: 2px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.header-inner { flex-wrap: wrap; }
+
+.site-header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.site-nav { display: none; }
+
+.site-nav.is-open { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--bg); padding: 96px 20px 40px; overflow-y: auto; }
+
+.site-nav ul { display: block; counter-reset: nav; }
+
+.site-nav ul::before { content: "// Navegação"; display: block; margin-bottom: 18px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+
+.site-nav li { counter-increment: nav; position: relative; border-bottom: 1px solid var(--line); }
+
+.site-nav li::after { content: "0" counter(nav); position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 12px; color: var(--blue); }
+
+.site-nav a { display: block; padding: 16px 40px 16px 0; font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--muted-2); }
+
+.site-nav a.active { color: var(--text); }
+
+.site-nav a.active::after { display: none; }
+
+.footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+.social-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+.social-pill { width: fit-content; }
+
+.footer-nav ul { grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+
+.footer-bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 20px; }
+}
+
+@media (max-width: 768px) {.info-pill { white-space: normal; }
+
+.info-pill-block { display: flex; width: 100%; white-space: normal; }
+
+.tl-card { min-width: 0; overflow-wrap: anywhere; }
+
+.tl-card .tags-mono li { white-space: normal; }
+
+.tl-item { padding-right: 0; }
+
+.cv-preview { height: auto; }
+
+.cv-doc { position: relative; left: auto; top: auto; transform: rotate(2deg); margin: 0 auto; width: 200px; height: 260px; }
+}
+
+@media (max-width: 768px) {.cv-actions { flex-direction: column; align-items: flex-start; }
+
+.cv-actions .btn { width: auto; }
+}
+
+@media (max-width: 768px) {.cv-doc { background: var(--surface-2); border-color: var(--line); }
+
+.cv-doc-head strong { color: var(--text); }
+
+.cv-doc-head small,
+.cv-doc-foot { color: var(--muted-2); }
+
+.cv-line { background: var(--line); }
+
+.cv-line-accent { background: var(--blue-light); }
+
+.theme-toggle { order: 1; margin-left: auto; }
+
+.menu-toggle { order: 2; margin-left: 8px; }
+}
+
+@media (max-width: 768px) {.site-footer { padding-bottom: 56px; }
+
+.footer-grid { padding-bottom: 8px; }
+}
+
+@media (max-width: 768px) {.footer-grid .social-links { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+
+.footer-nav,
+.footer-bottom { display: none; }
+}
+
+@media (max-width: 768px) {.cv-doc { overflow: hidden; height: 300px; padding: 20px; }
+
+.cv-line { margin: 9px 0; }
+
+.cv-doc-foot { bottom: 14px; left: 20px; }
+}
+
+@media (max-width: 768px) {.cv-actions .btn { width: 220px; justify-content: center; }
+}
+
+@media (max-width: 768px) {.cv-card { gap: 40px; }
+
+.cv-preview { margin-top: 12px; }
+}
+
+@media (max-width: 768px) {.cv-card { padding-bottom: 56px; }
+
+.cv-preview { margin-bottom: 0; }
+}
+
+/* Palavras dentro de pílulas com borda azul */
+.info-pill,
+.tags-mono li {
+  border: 1px solid var(--blue);
+}
+
+/* Pílulas de informação: cinza e retas; a da instituição fica azul */
+.info-pill {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.tags-mono li {
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.info-pill-block {
+  border-color: var(--blue);
+  margin: 12px 0 0;
+}
+
+/* Informações em linhas separadas, com espaço entre elas */
+.tl-head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tl-card .tl-desc,
+.tl-card .tags-mono {
+  margin-top: 14px;
+}
+
+/* Volta ao padrão anterior (tudo exceto o nome da escola) */
+.info-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.tags-mono li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.tl-head {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.tl-card .tl-desc {
+  margin-top: 12px;
+}
+
+.tl-card .tags-mono {
+  margin-top: 16px;
+}
+
+/* Nome da escola: quadrado, borda azul e em linha própria */
+.info-pill-block {
+  border-color: var(--blue);
+  border-radius: 0;
+  margin: 12px 0 0;
+}
+
+/* Pílulas arredondadas com borda azul; o nome da escola fica sem borda */
+.info-pill {
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.tags-mono li {
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+}
+
+.info-pill-block {
+  border: 0;
+  border-radius: 0;
+  background: var(--surface-2);
+}
+
+/* Texto azul dentro das pílulas com borda; nome da escola arredondado e sem borda */
+.info-pill,
+.tags-mono li {
+  color: var(--blue);
+}
+
+.info-pill-block {
+  border: 0;
+  border-radius: 999px;
+}
+
+/* Nome da escola: pontas levemente arredondadas e cor original */
+.info-pill-block {
+  border: 0;
+  border-radius: 10px;
+  color: var(--text);
+}
+
+/* Mais espaço dentro dos cards da linha do tempo */
+.tl-card {
+  padding: 28px 30px;
+}
+
+.tl-head {
+  margin-bottom: 18px;
+}
+
+.tl-title {
+  margin-top: 6px;
+}
+
+.tl-sub {
+  margin-top: 10px;
+}
+
+.tl-card .tl-desc {
+  margin-top: 18px;
+}
+
+.tl-card .tags-mono {
+  margin-top: 22px;
+  gap: 10px;
+}
+
+.info-pill-block {
+  margin: 16px 0 0;
+}
+
+/* Mais espaço interno no nome da escola */
+.info-pill-block {
+  padding: 10px 16px;
+  line-height: 1.5;
+}
+
+/* Espaço entre o botão de certificado, o texto e a borda do card */
+.tl-card .btn-cert {
+  margin-top: 26px;
+}
+
+.tl-card:has(.btn-cert) {
+  padding-bottom: 34px;
+}
+
+@media (max-width: 768px) {.menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+
+.menu-toggle span { width: 18px; height: 1.5px; margin: 0; }
+}
+
+/* Botões secundários e redes sociais em azul (o botão principal segue igual) */
+.btn-outline,
+.btn-ghost {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-ghost-dark {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+}
+
+.social-pill {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Barra dupla do título do rodapé em azul */
+.footer-title .slash {
+  color: var(--blue);
+}
+
+/* Título do rodapé inteiro em azul ("// Páginas") */
+.footer-title {
+  color: var(--blue);
 }
