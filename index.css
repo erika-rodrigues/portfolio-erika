@@ -17,9 +17,10 @@
    ========================================================= */
 /* ---------- 1. Variáveis de cor ---------- */
 :root {
-  --bg: #f4f6fa;
-  --bg-tint: #eef2f9;
-  --surface: #ffffff;
+  --bg: #e7ecf4;
+  --bg-tint: #dfe6f1;
+  --pill-ink: #1d4ed8;
+  --surface: #f7f9fc;
   --surface-2: #eaeef6;
   --text: #131a2a;
   --muted: #5b6578;
@@ -40,6 +41,7 @@
 @media (prefers-color-scheme: dark) {:root:not([data-theme="light"]) {
     --bg: #0b1322;
     --bg-tint: #0e1830;
+  --pill-ink: #8fb0ff;
     --surface: #121c31;
     --surface-2: #1a2640;
     --text: #eef2fa;
@@ -60,6 +62,7 @@
 :root[data-theme="dark"] {
   --bg: #0b1322;
   --bg-tint: #0e1830;
+  --pill-ink: #8fb0ff;
   --surface: #121c31;
   --surface-2: #1a2640;
   --text: #eef2fa;
@@ -1548,77 +1551,3 @@ h4 {
   color: var(--blue-light);
 }
 
-/* Pílulas da trajetória em construção (home): azul, mono, cantos arredondados */
-.about-text .tags li {
-  padding: 6px 14px;
-  border: 1px solid color-mix(in srgb, var(--blue-light) 45%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--blue-light) 8%, transparent);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--blue-light);
-}
-
-/* Hero da home: nome em destaque, texto um pouco menor, redes sociais um tico menores */
-.hero-title {
-  font-size: clamp(44px, 9vw, 76px);
-}
-
-.hero-lead {
-  font-size: 17px;
-}
-
-.hero-text .social-links .social-pill {
-  padding: 7px 12px;
-  font-size: 13px;
-}
-
-/* Hero da home: nome maior e ícones das redes sociais em azul */
-.hero-title {
-  font-size: clamp(48px, 10vw, 92px);
-}
-
-.hero-text .social-links .social-pill svg {
-  stroke: var(--blue);
-}
-
-/* Nome da hero ainda maior */
-.hero-title {
-  font-size: clamp(52px, 11vw, 112px);
-}
-
-/* Botões secundários e redes sociais em azul (o botão principal segue igual) */
-.btn-outline,
-.btn-ghost {
-  border-color: var(--blue);
-  color: var(--blue);
-}
-
-.btn-ghost-dark {
-  border-color: var(--blue-light);
-  color: var(--blue-light);
-}
-
-.social-pill {
-  border-color: var(--blue);
-  color: var(--blue);
-}
-
-/* Link do GitHub dos cards: pílula azul, como os outros botões */
-.link-muted {
-  padding: 9px 14px;
-  border: 1px solid var(--blue);
-  border-radius: 999px;
-  color: var(--blue);
-  font-size: 14px;
-}
-
-/* Barra dupla do título do rodapé em azul */
-.footer-title .slash {
-  color: var(--blue);
-}
-
-/* Título do rodapé inteiro em azul ("// Páginas") */
-.footer-title {
-  color: var(--blue);
-}
