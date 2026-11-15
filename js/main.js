@@ -339,4 +339,68 @@
     sections.forEach(function (item) { navObserver.observe(item.section); });
   }
 
+  /* ---------- 8. Formulário da página Contato ---------- */
+  var form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var note = form.querySelector('.form-note');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      // Endereço do serviço que recebe a mensagem (ex.: https://formspree.io/f/xxxx)
+      var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJKSmCizqtq9V_63esgNxOK3qkAmzE_KuJ7nENjy7V7PrAhKZreWSke4XTLITbihkb0w/exec';
+      var button = form.querySelector('button[type="submit"]');
+
+      var status = document.getElementById('form-status');
+      var formNote = document.getElementById('form-note');
+      var emailField = form.querySelector('#email');
+      var replyField = document.getElementById('replyto');
+      if (emailField && replyField) replyField.value = emailField.value.trim();
+
+      // type: 'success' | 'error' | 'info'
+      function setNote(text, type) {
+        if (!status) return;
+        status.textContent = text;
+        status.className = 'form-status is-' + type;
+        if (type === 'success') status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        // Reforço abaixo do botão, para quem não vê a mensagem de cima
+        if (formNote) {
+          if (type === 'success') {
+            formNote.textContent = '// mensagem enviada com sucesso';
+            formNote.className = 'form-note is-success';
+          } else if (type === 'error') {
+            formNote.textContent = '// erro ao enviar mensagem';
+            formNote.className = 'form-note is-error';
+          } else {
+            formNote.textContent = '';
+            formNote.className = 'form-note';
+          }
+        }
+      }
+
+      if (!FORM_ENDPOINT) {
+        setNote('Formulário ainda não conectado ao e-mail.', 'error');
+        return;
+      }
+
+      if (button) button.disabled = true;
+      setNote('Enviando sua mensagem…', 'info');
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(new FormData(form))
+      }).then(function () {
+        form.reset();
+        setNote('✓ Mensagem enviada com sucesso!\nObrigada pelo contato.', 'success');
+      }).catch(function () {
+        setNote('Não foi possível enviar agora. Tente novamente.', 'error');
+      }).then(function () {
+        if (button) button.disabled = false;
+      });
+    });
+  }
 })();
