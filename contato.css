@@ -813,3 +813,135 @@ h3 {
   color: var(--blue);
 }
 
+/* Mensagem de envio ao lado do botão */
+.form-actions .form-status {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 1.3;
+  box-shadow: none;
+}
+
+/* Reforço do resultado abaixo do botão */
+.form-note.is-success {
+  color: var(--blue);
+}
+
+.form-note.is-error {
+  color: #b42318;
+}
+
+@media (max-width: 768px) {.form-note {
+    display: none;
+  }
+}
+
+/* Botões secundários e redes sociais em azul (o botão principal segue igual) */
+.btn-outline,
+.btn-ghost {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-ghost-dark {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+}
+
+.social-pill {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Barra dupla do título do rodapé em azul */
+.footer-title .slash {
+  color: var(--blue);
+}
+
+/* Título do rodapé inteiro em azul ("// Páginas") */
+.footer-title {
+  color: var(--blue);
+}
+
+/* Mensagem de envio: respeita a quebra de linha (uma frase embaixo da outra) */
+.form-status {
+  white-space: pre-line;
+}
+
+/* Modo claro: só as duas linhas entre os contatos, na mesma espessura do modo escuro, com cor mais forte */
+:root[data-theme="light"] .channels {
+  border-top: 0;
+}
+
+:root[data-theme="light"] .channel {
+  border-bottom: 0;
+}
+
+:root[data-theme="light"] .channels li + li .channel {
+  border-top: 1px solid #6b778c;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .channels {
+    border-top: 0;
+  }
+
+  :root:not([data-theme="dark"]) .channel {
+    border-bottom: 0;
+  }
+
+  :root:not([data-theme="dark"]) .channels li + li .channel {
+    border-top: 1px solid #6b778c;
+  }
+}
+
+/* "// Nova mensagem" do card em azul */
+.contact-card-title {
+  color: var(--blue);
+}
+
+/* Palavras em azul dos títulos em destaque: um brilho branco passa por elas, indo e voltando */
+h1 .accent,
+h2 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) 42%,
+    #ffffff 50%,
+    var(--blue) 58%,
+    var(--blue) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes accent-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .accent,
+  h2 .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue);
+    animation: none;
+  }
+}
+
+/* Modo claro: o brilho passa em azul-marinho, para não se misturar com o fundo claro */
+:root[data-theme="light"] h1 .accent,
+:root[data-theme="light"] h2 .accent {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) h1 .accent,
+  :root:not([data-theme="dark"]) h2 .accent {
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+  }
+}
