@@ -12,9 +12,9 @@
    ========================================================= */
 /* ---------- 1. Variáveis de cor, base, cabeçalho e hero ---------- */
 :root {
-  --bg: #f4f6fa;
-  --bg-tint: #eef2f9;
-  --surface: #ffffff;
+  --bg: #e7ecf4;
+  --bg-tint: #dfe6f1;
+  --surface: #f7f9fc;
   --surface-2: #eaeef6;
   --text: #131a2a;
   --muted: #5b6578;
@@ -1340,4 +1340,179 @@ h4 {
 /* Título do rodapé inteiro em azul ("// Páginas") */
 .footer-title {
   color: var(--blue);
+}
+
+/* Currículo: a folha inclinada se endireita ao passar o mouse */
+.cv-doc {
+  transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.cv-preview:hover .cv-doc {
+  transform: translateX(-50%) rotate(0deg);
+}
+
+@media (max-width: 768px) {
+  .cv-preview:hover .cv-doc {
+    transform: rotate(0deg);
+  }
+}
+
+/* Currículo no modo claro: cartão escuro, como na referência */
+:root[data-theme="light"] .cv-doc {
+  --text: #f1f5ff;
+  --muted-2: #8b97b3;
+  --line: rgba(255, 255, 255, 0.1);
+  background: #1a2540;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .cv-doc {
+    --text: #f1f5ff;
+    --muted-2: #8b97b3;
+    --line: rgba(255, 255, 255, 0.1);
+    background: #1a2540;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* Currículo escuro (modo claro): nome e ícone legíveis */
+:root[data-theme="light"] .cv-doc-head strong {
+  color: #f1f5ff;
+}
+
+:root[data-theme="light"] .cv-doc-head small,
+:root[data-theme="light"] .cv-doc-foot {
+  color: #8b97b3;
+}
+
+:root[data-theme="light"] .cv-doc-icon {
+  background: #2d4a7c;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .cv-doc-head strong {
+    color: #f1f5ff;
+  }
+
+  :root:not([data-theme="dark"]) .cv-doc-head small,
+  :root:not([data-theme="dark"]) .cv-doc-foot {
+    color: #8b97b3;
+  }
+
+  :root:not([data-theme="dark"]) .cv-doc-icon {
+    background: #2d4a7c;
+  }
+}
+
+/* Palavras em azul dos títulos em destaque: um brilho branco passa por elas, indo e voltando */
+h1 .accent,
+h2 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) 42%,
+    #ffffff 50%,
+    var(--blue) 58%,
+    var(--blue) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes accent-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .accent,
+  h2 .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue);
+    animation: none;
+  }
+}
+
+/* Número do rótulo da página (02 / 05) em azul */
+.eyebrow-num {
+  color: var(--blue);
+}
+
+/* Modo claro: o brilho passa em azul-marinho, para não se misturar com o fundo claro */
+:root[data-theme="light"] h1 .accent,
+:root[data-theme="light"] h2 .accent {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) h1 .accent,
+  :root:not([data-theme="dark"]) h2 .accent {
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+  }
+}
+
+/* Número grande ao lado do título: contorno em azul mais claro (modo claro e modo escuro) */
+:root[data-theme="light"] .page-hero-num {
+  -webkit-text-stroke: 1.5px #8fb0f0;
+}
+
+:root[data-theme="dark"] .page-hero-num {
+  -webkit-text-stroke: 1px #7d8aa6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .page-hero-num {
+    -webkit-text-stroke: 1.5px #8fb0f0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .page-hero-num {
+    -webkit-text-stroke: 1px #7d8aa6;
+  }
+}
+
+/* Chamada "Vamos construir algo juntos?": mesmo brilho que passa pelos títulos */
+:root .cta .cta-title .accent {
+  background: linear-gradient(90deg, var(--blue-light) 0%, var(--blue-light) 42%, #ffffff 50%, var(--blue-light) 58%, var(--blue-light) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .cta .cta-title .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue-light);
+    animation: none;
+  }
+}
+
+/* Chamada "Vamos construir algo juntos?": mesmas medidas da home (desktop) */
+@media (min-width: 769px) {
+  .cta-wrap {
+    margin-bottom: 96px;
+  }
+
+  .cta {
+    padding: 77px 58px;
+  }
+
+  .cta-title {
+    font-size: clamp(48px, 6vw, 72px);
+  }
+
+  .cta .hero-actions {
+    margin-top: 36px;
+  }
 }
