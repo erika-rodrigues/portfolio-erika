@@ -7,13 +7,11 @@
    3. Canais de contato
    4. Rodapé
    ========================================================= */
-
-
 /* ---------- 1. Variáveis de cor, base, cabeçalho e título ---------- */
 :root {
-  --bg: #f4f6fa;
-  --bg-tint: #eef2f9;
-  --surface: #ffffff;
+  --bg: #e7ecf4;
+  --bg-tint: #dfe6f1;
+  --surface: #f7f9fc;
   --surface-2: #eaeef6;
   --text: #131a2a;
   --muted: #5b6578;
@@ -32,8 +30,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+@media (prefers-color-scheme: dark) {:root:not([data-theme="light"]) {
     --bg: #0b1322;
     --bg-tint: #0e1830;
     --surface: #121c31;
@@ -330,7 +327,6 @@ h3 {
   color: var(--muted);
 }
 
-
 /* ---------- 2. Formulário ---------- */
 .contact-card {
   padding: 26px;
@@ -501,7 +497,6 @@ h3 {
   box-shadow: 0 14px 30px -14px var(--blue);
 }
 
-
 /* ---------- 3. Canais de contato ---------- */
 .channels {
   margin-top: 36px;
@@ -567,7 +562,6 @@ h3 {
   font-size: 14px;
   color: var(--muted-2);
 }
-
 
 /* ---------- 4. Rodapé ---------- */
 .site-footer {
@@ -662,3 +656,160 @@ h3 {
   font-size: 12px;
   color: var(--muted-2);
 }
+
+@media (max-width: 768px) {body { overflow-x: hidden; }
+
+.site-nav ul { flex-wrap: wrap; gap: 8px 16px !important; }
+
+.hero-grid,
+.split,
+.cheguei-grid,
+.project-hero-grid,
+.project-body-grid,
+.contact-grid,
+.about-grid { grid-template-columns: minmax(0, 1fr) !important; }
+
+.hero-visual,
+.cover-photo,
+.project-visual,
+.cv-preview { max-width: 100%; }
+
+.container { padding: 0 18px; }
+
+.header-inner { height: auto; flex-wrap: wrap; padding: 14px 0; gap: 12px; }
+
+.site-nav { order: 3; width: 100%; margin: 0; }
+
+.site-nav ul { justify-content: center; gap: 18px; }
+
+.site-nav a { font-size: 14px; }
+
+.contact-hero { padding: 40px 0 56px; }
+
+.contact-ring { display: none; }
+
+.contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+.contact-title { font-size: 44px; white-space: normal; }
+
+.contact-lead { font-size: 16px; }
+
+.channels { margin-top: 32px; }
+
+.contact-card { padding: 22px; }
+
+.field textarea { min-height: 150px; }
+
+.form-actions { flex-direction: column; align-items: stretch; }
+
+.form-actions .btn { justify-content: center; }
+
+.footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+.footer-nav ul { grid-template-columns: 1fr 1fr; }
+
+.footer-bottom-inner { flex-direction: column; text-align: center; }
+}
+
+/* ---------- 15. Celular: menu, rodapé e espaçamentos ---------- */
+.menu-toggle { display: none; }
+
+@media (max-width: 768px) {.container { padding-left: 20px; padding-right: 20px; }
+
+.menu-toggle { display: grid; place-items: center; order: 2; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
+
+.menu-toggle span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--text); margin: 2px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.header-inner { flex-wrap: wrap; }
+
+.site-header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.site-nav { display: none; }
+
+.site-nav.is-open { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--bg); padding: 96px 20px 40px; overflow-y: auto; }
+
+.site-nav ul { display: block; counter-reset: nav; }
+
+.site-nav ul::before { content: "// Navegação"; display: block; margin-bottom: 18px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+
+.site-nav li { counter-increment: nav; position: relative; border-bottom: 1px solid var(--line); }
+
+.site-nav li::after { content: "0" counter(nav); position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 12px; color: var(--blue); }
+
+.site-nav a { display: block; padding: 16px 40px 16px 0; font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--muted-2); }
+
+.site-nav a.active { color: var(--text); }
+
+.site-nav a.active::after { display: none; }
+
+.footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+.social-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+.social-pill { width: fit-content; }
+
+.footer-nav ul { grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+
+.footer-bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 20px; }
+}
+
+@media (max-width: 768px) {.theme-toggle { order: 1; margin-left: auto; }
+
+.menu-toggle { order: 2; margin-left: 8px; }
+}
+
+@media (max-width: 768px) {.site-footer { padding-bottom: 56px; }
+
+.footer-grid { padding-bottom: 8px; }
+}
+
+@media (max-width: 768px) {.footer-grid .social-links { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+
+.footer-nav,
+.footer-bottom { display: none; }
+}
+
+@media (max-width: 768px) {.menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+
+.menu-toggle span { width: 18px; height: 1.5px; margin: 0; }
+}
+
+/* Mais espaço entre o botão de envio e o final do card */
+.contact-card {
+  padding-bottom: 40px;
+}
+
+.form-actions {
+  margin-bottom: 8px;
+}
+
+/* Botão centralizado entre a caixa de texto e o fim do card */
+.form-actions {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.contact-card {
+  padding-bottom: 32px;
+}
+
+/* Mais espaço entre os campos do formulário */
+.contact-form {
+  gap: 28px;
+}
+
+/* Ícones e nomes (rótulos) dos canais de contato em azul */
+.channel-icon svg {
+  stroke: var(--blue);
+}
+
+.channel-text small {
+  color: var(--blue);
+}
+
