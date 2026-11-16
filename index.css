@@ -1590,3 +1590,219 @@ h4 {
   font-size: clamp(52px, 11vw, 112px);
 }
 
+/* Botões secundários e redes sociais em azul (o botão principal segue igual) */
+.btn-outline,
+.btn-ghost {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-ghost-dark {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+}
+
+.social-pill {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Link do GitHub dos cards: pílula azul, como os outros botões */
+.link-muted {
+  padding: 9px 14px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: 14px;
+}
+
+/* Barra dupla do título do rodapé em azul */
+.footer-title .slash {
+  color: var(--blue);
+}
+
+/* Título do rodapé inteiro em azul ("// Páginas") */
+.footer-title {
+  color: var(--blue);
+}
+
+/* Projetos da home: rótulo de categoria, descrição com 2 linhas e link de texto */
+.project-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.project-featured .project-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* Projetos da home: três cards lado a lado no desktop, com imagem em cima */
+@media (min-width: 769px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .projects-grid .project-card {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+  }
+
+  .projects-grid .project-featured {
+    grid-column: auto;
+  }
+
+  .projects-grid .project-visual {
+    height: 200px;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .projects-grid .project-body {
+    padding: 22px 22px 24px;
+  }
+
+  .projects-grid .project-title {
+    font-size: 26px;
+  }
+
+  .projects-grid .project-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Projetos da home: tecnologias pequenas e azuis; card mais compacto */
+.projects-grid .tags {
+  gap: 6px;
+}
+
+.projects-grid .tags li {
+  padding: 4px 9px;
+  border: 1px solid color-mix(in srgb, var(--pill-ink) 55%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--pill-ink) 10%, transparent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--pill-ink);
+}
+
+@media (min-width: 769px) {
+  .projects-grid .project-visual {
+    height: 180px;
+  }
+
+  .projects-grid .project-body {
+    gap: 12px;
+    padding: 20px 22px 18px;
+  }
+
+  .projects-grid .project-link {
+    margin-top: 6px;
+  }
+}
+
+/* Projetos da home: mais espaço entre texto, tecnologias, botão e o fim do card */
+@media (min-width: 769px) {
+  .projects-grid .project-body {
+    gap: 18px;
+    padding: 22px 22px 26px;
+  }
+
+  .projects-grid .project-link {
+    margin-top: 10px;
+  }
+}
+
+/* Palavras em azul dos títulos em destaque: um brilho branco passa por elas, indo e voltando */
+h1 .accent,
+h2 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) 42%,
+    #ffffff 50%,
+    var(--blue) 58%,
+    var(--blue) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes accent-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .accent,
+  h2 .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue);
+    animation: none;
+  }
+}
+
+/* Modo claro: o brilho passa em azul-marinho, para não se misturar com o fundo claro */
+:root[data-theme="light"] h1 .accent,
+:root[data-theme="light"] h2 .accent {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) h1 .accent,
+  :root:not([data-theme="dark"]) h2 .accent {
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+  }
+}
+
+/* Chamada "Vamos construir algo juntos?": mesmo brilho que passa pelos títulos */
+:root .cta .cta-title .accent {
+  background: linear-gradient(90deg, var(--blue-light) 0%, var(--blue-light) 42%, #ffffff 50%, var(--blue-light) 58%, var(--blue-light) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .cta .cta-title .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue-light);
+    animation: none;
+  }
+}
