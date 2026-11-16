@@ -12,9 +12,9 @@
    ========================================================= */
 /* ---------- 1. Variáveis de cor, base e cabeçalho ---------- */
 :root {
-  --bg: #f4f6fa;
-  --bg-tint: #eef2f9;
-  --surface: #ffffff;
+  --bg: #e7ecf4;
+  --bg-tint: #dfe6f1;
+  --surface: #f7f9fc;
   --surface-2: #eaeef6;
   --text: #131a2a;
   --muted: #5b6578;
@@ -1395,4 +1395,76 @@ h4 {
 /* Título do rodapé inteiro em azul ("// Páginas") */
 .footer-title {
   color: var(--blue);
+}
+
+/* Palavras em azul dos títulos em destaque: um brilho branco passa por elas, indo e voltando */
+h1 .accent,
+h2 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) 42%,
+    #ffffff 50%,
+    var(--blue) 58%,
+    var(--blue) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes accent-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .accent,
+  h2 .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue);
+    animation: none;
+  }
+}
+
+/* Número do rótulo da página (02 / 05) em azul */
+.eyebrow-num {
+  color: var(--blue);
+}
+
+/* Modo claro: o brilho passa em azul-marinho, para não se misturar com o fundo claro */
+:root[data-theme="light"] h1 .accent,
+:root[data-theme="light"] h2 .accent {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) h1 .accent,
+  :root:not([data-theme="dark"]) h2 .accent {
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+  }
+}
+
+/* Número grande ao lado do título: contorno em azul mais claro (modo claro e modo escuro) */
+:root[data-theme="light"] .page-hero-num {
+  -webkit-text-stroke: 1.5px #8fb0f0;
+}
+
+:root[data-theme="dark"] .page-hero-num {
+  -webkit-text-stroke: 1px #7d8aa6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .page-hero-num {
+    -webkit-text-stroke: 1.5px #8fb0f0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .page-hero-num {
+    -webkit-text-stroke: 1px #7d8aa6;
+  }
 }
