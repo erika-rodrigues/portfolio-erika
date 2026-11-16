@@ -1562,3 +1562,31 @@ h4 {
   color: var(--pill-ink);
 }
 
+/* Hero da home: nome em destaque, texto um pouco menor, redes sociais um tico menores */
+.hero-title {
+  font-size: clamp(44px, 9vw, 76px);
+}
+
+.hero-lead {
+  font-size: 17px;
+}
+
+.hero-text .social-links .social-pill {
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+/* Hero da home: nome maior e ícones das redes sociais em azul */
+.hero-title {
+  font-size: clamp(48px, 10vw, 92px);
+}
+
+.hero-text .social-links .social-pill svg {
+  stroke: var(--blue);
+}
+
+/* Nome da hero ainda maior */
+.hero-title {
+  font-size: clamp(52px, 11vw, 112px);
+}
+
