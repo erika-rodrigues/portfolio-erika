@@ -13,9 +13,9 @@
    ========================================================= */
 /* ---------- 1. Variáveis de cor, base, cabeçalho e apresentação ---------- */
 :root {
-  --bg: #f4f6fa;
-  --bg-tint: #eef2f9;
-  --surface: #ffffff;
+  --bg: #e7ecf4;
+  --bg-tint: #dfe6f1;
+  --surface: #f7f9fc;
   --surface-2: #eaeef6;
   --text: #131a2a;
   --muted: #5b6578;
@@ -1126,3 +1126,144 @@ h3 {
 .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
 
+/* ---------- 15. Celular: menu, rodapé e espaçamentos ---------- */
+.menu-toggle { display: none; }
+
+@media (max-width: 768px) {.container { padding-left: 20px; padding-right: 20px; }
+
+.menu-toggle { display: grid; place-items: center; order: 2; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
+
+.menu-toggle span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--text); margin: 2px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.header-inner { flex-wrap: wrap; }
+
+.site-header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.site-nav { display: none; }
+
+.site-nav.is-open { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 40; background: var(--bg); padding: 96px 20px 40px; overflow-y: auto; }
+
+.site-nav ul { display: block; counter-reset: nav; }
+
+.site-nav ul::before { content: "// Navegação"; display: block; margin-bottom: 18px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+
+.site-nav li { counter-increment: nav; position: relative; border-bottom: 1px solid var(--line); }
+
+.site-nav li::after { content: "0" counter(nav); position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 12px; color: var(--blue); }
+
+.site-nav a { display: block; padding: 16px 40px 16px 0; font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--muted-2); }
+
+.site-nav a.active { color: var(--text); }
+
+.site-nav a.active::after { display: none; }
+
+.footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+.social-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+.social-pill { width: fit-content; }
+
+.footer-nav ul { grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+
+.footer-bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 20px; }
+}
+
+@media (max-width: 768px) {.theme-toggle { order: 1; margin-left: auto; }
+
+.menu-toggle { order: 2; margin-left: 8px; }
+}
+
+@media (max-width: 768px) {.site-footer { padding-bottom: 56px; }
+
+.footer-grid { padding-bottom: 8px; }
+}
+
+@media (max-width: 768px) {.footer-grid .social-links { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+
+.footer-nav,
+.footer-bottom { display: none; }
+}
+
+@media (max-width: 768px) {.menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+
+.menu-toggle span { width: 18px; height: 1.5px; margin: 0; }
+}
+
+/* Botões secundários e redes sociais em azul (o botão principal segue igual) */
+.btn-outline,
+.btn-ghost {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-ghost-dark {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+}
+
+.social-pill {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Barra dupla do título do rodapé em azul */
+.footer-title .slash {
+  color: var(--blue);
+}
+
+/* Título do rodapé inteiro em azul ("// Páginas") */
+.footer-title {
+  color: var(--blue);
+}
+
+/* Palavras em azul dos títulos em destaque: um brilho branco passa por elas, indo e voltando */
+h1 .accent,
+h2 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--blue) 0%,
+    var(--blue) 42%,
+    #ffffff 50%,
+    var(--blue) 58%,
+    var(--blue) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes accent-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .accent,
+  h2 .accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--blue);
+    animation: none;
+  }
+}
+
+/* Modo claro: o brilho passa em azul-marinho, para não se misturar com o fundo claro */
+:root[data-theme="light"] h1 .accent,
+:root[data-theme="light"] h2 .accent {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) h1 .accent,
+  :root:not([data-theme="dark"]) h2 .accent {
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
+  }
+}
