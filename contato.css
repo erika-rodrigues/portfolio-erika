@@ -945,3 +945,20 @@ h2 .accent {
     background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
   }
 }
+
+/* Canais de contato: a linha salta para cima ao passar o mouse */
+.channel {
+  transition: transform 0.35s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.channel:hover {
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .channel,
+  .channel:hover {
+    transform: none;
+    transition: none;
+  }
+}
