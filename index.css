@@ -1806,3 +1806,54 @@ h2 .accent {
     animation: none;
   }
 }
+
+/* Card escuro "Hardware e sistemas embarcados": um brilho azul atravessa o card, indo e voltando */
+.skill-dark {
+  position: relative;
+  isolation: isolate;
+}
+
+.skill-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: linear-gradient(105deg, transparent 20%, rgba(59, 130, 246, 0.16) 50%, transparent 80%);
+  background-size: 250% 100%;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-dark::after {
+    animation: none;
+    background-image: none;
+  }
+}
+
+/* Card de contato: o canto dos círculos brilha devagar, indo e voltando */
+.cta-glow {
+  animation: cta-corner-glow 2.5s ease-in-out infinite alternate;
+}
+
+.cta-ring {
+  animation: cta-corner-ring 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes cta-corner-glow {
+  from { opacity: 0.55; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes cta-corner-ring {
+  from { border-color: rgba(143, 176, 255, 0.18); }
+  to { border-color: rgba(96, 165, 250, 0.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow,
+  .cta-ring {
+    animation: none;
+  }
+}
