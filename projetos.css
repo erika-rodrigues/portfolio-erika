@@ -1195,3 +1195,103 @@ h2 .accent {
     animation: none;
   }
 }
+
+/* Card de contato: o canto dos círculos brilha devagar, indo e voltando */
+.cta-glow {
+  animation: cta-corner-glow 2.5s ease-in-out infinite alternate;
+}
+
+.cta-ring {
+  animation: cta-corner-ring 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes cta-corner-glow {
+  from { opacity: 0.55; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes cta-corner-ring {
+  from { border-color: rgba(143, 176, 255, 0.18); }
+  to { border-color: rgba(96, 165, 250, 0.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow,
+  .cta-ring {
+    animation: none;
+  }
+}
+
+/* Número grande do topo: a linha azul anda pelo contorno do número (devagar) */
+.page-hero-num {
+  height: auto;
+  overflow: visible;
+}
+
+.page-hero-num .num-shape {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.page-hero-num .num-trace {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 14 86;
+  animation: num-trace-run 10s linear infinite;
+}
+
+@keyframes num-trace-run {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-num .num-trace {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Modo claro: contorno do número mais visível e linha azul mais suave */
+:root[data-theme="light"] .page-hero-num .num-shape {
+  stroke: #a3aec4;
+  stroke-width: 1.8;
+}
+
+:root[data-theme="light"] .page-hero-num .num-trace {
+  stroke: #1d4ed8;
+  stroke-width: 2.5;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .page-hero-num .num-shape {
+    stroke: #a3aec4;
+    stroke-width: 1.8;
+  }
+
+  :root:not([data-theme="dark"]) .page-hero-num .num-trace {
+    stroke: #1d4ed8;
+    stroke-width: 2.5;
+  }
+}
+
+/* Filtros: os cards que aparecem entram com um movimento suave */
+.project-card.card-enter {
+  animation: project-card-in 0.6s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes project-card-in {
+  from { opacity: 0; transform: translateY(22px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card.card-enter {
+    animation: none;
+  }
+}
