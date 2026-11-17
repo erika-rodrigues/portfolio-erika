@@ -308,7 +308,14 @@
         Array.prototype.forEach.call(cards, function (card) {
           var show = filter === 'todos' || card.getAttribute('data-category') === filter;
           card.style.display = show ? '' : 'none';
-          if (show) visible++;
+          card.classList.remove('card-enter');
+          if (show) {
+            // reinicia a animação de entrada, com um pequeno atraso entre os cards
+            void card.offsetWidth;
+            card.style.animationDelay = (visible * 80) + 'ms';
+            card.classList.add('card-enter');
+            visible++;
+          }
         });
         if (countLabel) countLabel.textContent = visible + (visible === 1 ? ' projeto' : ' projetos');
       });
@@ -403,4 +410,25 @@
       });
     });
   }
+
+  /* ---------- 9. Carrossel de imagens (Readapt, seção 09): seta única e volta ao início ---------- */
+  document.querySelectorAll('.shots-wrap').forEach(function (wrap) {
+    var track = wrap.querySelector('.shots');
+    var next = wrap.querySelector('.shots-nav.next');
+    if (!track || !next) return;
+
+    function step() {
+      var shot = track.querySelector('.shot');
+      return shot ? shot.getBoundingClientRect().width + 20 : 0;
+    }
+    next.addEventListener('click', function () {
+      var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      if (atEnd) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      }
+    });
+  });
+
 })();
