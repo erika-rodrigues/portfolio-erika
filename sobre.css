@@ -1468,3 +1468,127 @@ h2 .accent {
     -webkit-text-stroke: 1px #7d8aa6;
   }
 }
+
+/* Card 04 (hardware) em "O que já usei": um brilho azul atravessa o card, indo e voltando */
+.skill-dark {
+  position: relative;
+  isolation: isolate;
+}
+
+.skill-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: linear-gradient(105deg, transparent 20%, rgba(59, 130, 246, 0.16) 50%, transparent 80%);
+  background-size: 250% 100%;
+  animation: accent-sheen 3.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-dark::after {
+    animation: none;
+    background-image: none;
+  }
+}
+
+/* Cards de formação (incluindo o ensino técnico): uma linha azul anda pelas bordas */
+@property --edge-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.edu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: conic-gradient(from var(--edge-angle), transparent 0deg, transparent 290deg, #3b82f6 330deg, #93c5fd 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: edu-edge-spin 4s linear infinite;
+}
+
+@keyframes edu-edge-spin {
+  to { --edge-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card::before {
+    animation: none;
+  }
+}
+
+/* Linha azul: sentidos opostos entre cards vizinhos e velocidade constante */
+.edu-card::before {
+  animation-timing-function: linear;
+}
+
+.edu-card:nth-child(even)::before {
+  animation-direction: reverse;
+}
+
+/* Número grande do topo: a linha azul anda pelo contorno do número (devagar) */
+.page-hero-num {
+  height: auto;
+  overflow: visible;
+}
+
+.page-hero-num .num-shape {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.page-hero-num .num-trace {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 14 86;
+  animation: num-trace-run 10s linear infinite;
+}
+
+@keyframes num-trace-run {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-num .num-trace {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Modo claro: contorno do número mais visível e linha azul mais suave */
+:root[data-theme="light"] .page-hero-num .num-shape {
+  stroke: #a3aec4;
+  stroke-width: 1.8;
+}
+
+:root[data-theme="light"] .page-hero-num .num-trace {
+  stroke: #1d4ed8;
+  stroke-width: 2.5;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .page-hero-num .num-shape {
+    stroke: #a3aec4;
+    stroke-width: 1.8;
+  }
+
+  :root:not([data-theme="dark"]) .page-hero-num .num-trace {
+    stroke: #1d4ed8;
+    stroke-width: 2.5;
+  }
+}
