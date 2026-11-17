@@ -1267,3 +1267,108 @@ h2 .accent {
     background-image: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, #0a2a6e 50%, var(--blue) 58%, var(--blue) 100%);
   }
 }
+
+/* Fotos do Readapt (capa, "Como funciona" e seção 09): preenchem o espaço reservado */
+.cover-photo img,
+.part-photo img,
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.part-photo img {
+  min-height: 156px;
+}
+
+.shot img {
+  height: 180px;
+}
+
+/* Seção 09: carrossel com setas e imagens quadradas */
+.shots-wrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.shots {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.shots::-webkit-scrollbar {
+  display: none;
+}
+
+.shot {
+  flex: 0 0 calc((100% - 20px) / 2);
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  padding: 0;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.shots-nav {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.shots-nav:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.shots-nav svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .shot {
+    flex: 0 0 100%;
+  }
+
+  .shots-nav {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Seção 09: só a seta da direita */
+.shots-wrap {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
