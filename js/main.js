@@ -60,7 +60,7 @@
   function currentTheme() {
     var saved = safeGet('theme');
     if (saved === 'light' || saved === 'dark') return saved;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark';
   }
 
   function applyTheme(theme) {
@@ -68,7 +68,7 @@
   }
 
   var savedTheme = safeGet('theme');
-  if (savedTheme === 'light' || savedTheme === 'dark') applyTheme(savedTheme);
+  applyTheme(savedTheme === 'light' ? 'light' : 'dark');
 
   var themeButton = document.querySelector('.theme-toggle');
   if (themeButton) {

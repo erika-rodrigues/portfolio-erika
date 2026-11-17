@@ -962,3 +962,21 @@ h2 .accent {
     transition: none;
   }
 }
+
+/* Botão de modo: ao passar o mouse, ele assume as cores do outro modo */
+:root[data-theme="dark"] .theme-toggle:hover {
+  background: #f4f6fa;
+  border-color: #f4f6fa;
+  color: #0b1322;
+}
+
+:root[data-theme="light"] .theme-toggle:hover {
+  background: #0b1322;
+  border-color: #0b1322;
+  color: #f4f6fa;
+}
+
+/* Botão de modo: a troca de cores ao passar o mouse é mais lenta */
+.theme-toggle {
+  transition: transform 0.2s ease, background-color 0.6s ease, border-color 0.6s ease, color 0.6s ease;
+}
